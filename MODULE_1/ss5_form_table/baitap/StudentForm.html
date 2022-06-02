@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentForm</title>
+    <style>
+        p{
+            color: blue;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<form action="StudentForm.html" method="get">
+    <p style="text-align: center">REGISTER</p>
+    <table>
+        <tr>
+            <th>
+                <label for="fullname"> Full Name:</label>
+            </th>
+            <td>
+                <input type="text" name="fullname" placeholder="your name" id="fullname">
+            </td>
+        </tr>
+        <th>
+            <label for="yourbirth"> Day of birth:</label>
+        </th>
+        <td>
+            <input type="month" name="date" placeholder="your birth" id="yourbirth">
+        </td>
+        </tr>
+        <th>
+            <label> Gender:</label>
+        </th>
+        <td>
+            <input type="radio" name="gender" placeholder="gender"> Male
+            <input type="radio" name="gender" placeholder="gender"> Female
+        </td>
+        </tr>
+        <th>
+            <label for="address"> Address:</label>
+        </th>
+        <td>
+            <textarea id="address"></textarea>
+        </td>
+        </tr>
+        <th>
+            <label for="address"> Class:</label>
+        </th>
+        <td>
+            <select>
+                <option> Class 1</option>
+                <option> Class 2</option>
+                <option> Class 3</option>
+            </select>
+        </td>
+        </tr>
+        <th>
+            <label for="email"> Email:</label>
+        </th>
+        <td>
+            <input type="text" name="email" placeholder="your email" id="email">
+        </td>
+        </tr>
+        <th>
+            <label for="Phonenumber"> Day of birth:</label>
+        </th>
+        <td>
+            <input type="number" name="number" placeholder="your phone num" id="phonenumber">
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="SignIn">
+                <input type="submit" value="Retry">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

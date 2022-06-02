@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MarketResearch</title>
+    <style>
+        tr:nth-child(odd) {
+            background-color: #eee;
+        }
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<form action="customergraphic.html" method="get">
+    <p style="font-size: 18px"><b>MARKET RESEARCH SURVEY</b></p>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <p> <b>What is your age range?</b></p>
+    <select style="width: 150px">
+        <option> 18-24</option>
+        <option> 25-50</option>
+        <option> >50</option>
+    </select>
+    <p><b>What is your yearly income range?</b></p>
+    <select style="width: 150px">
+        <option>$0-$25,000</option>
+        <option>$25,000-$70,000</option>
+        <option>>$70,000</option>
+    </select>
+    <p><b>Gender Indentity</b></p>
+    <input type="radio" name="gender"> Male <br>
+    <input type="radio"name="gender"> Femalebr <br>
+    <input type="radio"name="gender"> Nonbinary <br>
+    <input type="radio"name="gender"> Other <br>
+    <input style="width: 150px" type="text"name="gender">
+    <p><b>Which of the following products have you purchase in the last 2 months. Please check all that apply.</b></p>
+    <input type="checkbox"> Product 1 <br>
+    <input type="checkbox"> Product 2 <br>
+    <input type="checkbox"> Product 3 <br>
+    <p><b>How often would you use our new product?</b></p>
+    <input type="radio" name="often"> Daily <br>
+    <input type="radio" name="often"> Weekly <br>
+    <input type="radio" name="often"> Monthly <br>
+    <p><b>What would you pay for the new product?</b></p>
+    <span>$</span> <input style="width: 30px"  type="number"><span>.</span><input style="width: 15px" type="number">
+    <br>
+    <span style="padding: 5px">Dollar</span> <span>Cent</span>
+    <p>What features would you like to see in the new product?</p>
+    <textarea></textarea>
+    <p>Please rate your level of agreement with the following statements.</p>
+    <table border="1" cellpadding="5px">
+        <tr>
+            <th></th>
+            <th>Strong Disagree</th>
+            <th>Disagree</th>
+            <th>Agree</th>
+        </tr>
+        <tr>
+            <th>Our Products are priced fairy.</th>
+            <th><input type="radio" name="Strong">1</th>
+            <th><input type="radio" name="Disagree">2</th>
+            <th><input type="radio"name="Agree">3</th>
+        </tr>
+        <tr>
+            <th>Our Products are high quality.</th>
+            <th><input type="radio"name="Strong">1</th>
+            <th><input type="radio"name="Disagree">2</th>
+            <th><input type="radio"name="Agree">3</th>
+        </tr>
+        <tr>
+            <th>You would recommend our product to a friend or coworker.</th>
+            <th><input type="radio"name="Strong">1</th>
+            <th><input type="radio"name="Disagree">2</th>
+            <th><input type="radio"name="Agree">3</th>
+        </tr>
+    </table>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
