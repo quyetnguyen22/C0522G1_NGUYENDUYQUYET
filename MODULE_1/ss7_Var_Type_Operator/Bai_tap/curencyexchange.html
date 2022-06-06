@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convertusdvnd</title>
+    <script src="currency.js"></script>
+</head>
+<body>
+<table cellspacing="10">
+        <tr>
+            <th><label for="amount"> Amount</label></th>
+            <th>From currency</th>
+            <th> To currency</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" name="amount" placeholder="1" id="amount">
+            </td>
+            <td style="text-align: center">
+                <select name="selectty" id="from">
+                    <option value="usd">USD</option>
+                    <option value="vnd">VND</option>
+                </select>
+            </td>
+            <td style="text-align: center">
+                <select name="selectty" id="to">
+                    <option value="usd">USD</option>
+                    <option value="vnd">VND</option>
+                </select>
+            </td>
+            <td><button onclick="convert()">Convert</button></td>
+        </tr>
+        <tr >
+            <td> Result:</td>
+            <td id="result"></td>
+        </tr>
+</table>
+<script src = currency.js></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>converting</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            background-color: royalblue;
+            padding-top: 20px;
+        }
+        table {
+
+        }
+    </style>
+</head>
+<body>
+<h2> Convert C-F </h2>
+<div>
+    <table>
+        <tr>
+            <th><label for="ctemp">C:</label></th>
+            <td><input type="number" name="ctemp" placeholder="Ctemp" id="ctemp"></td>
+        </tr>
+        <tr>
+            <th>F:</label></th>
+            <td id="ftemp"></td>
+        </tr>
+        <tr>
+            <th><button onclick="conv()">Convert</button></th>
+        </tr>
+    </table>
+</div>
+<script>
+    function conv() {
+        let c=document.getElementById('ctemp').value;
+        let f=(9/5)*parseFloat(c)+32;
+        document.getElementById('ftemp').innerHTML=f;
+    }
+</script>
+</body>
+</html>

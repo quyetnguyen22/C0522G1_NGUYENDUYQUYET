@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area</title>
+</head>
+<body>
+<h1>CircleAre</h1>
+<table>
+    <tr>
+        <th><label for="Radius"> Input radius:</label></th>
+        <td><input type="number" name="radius" placeholder="Radius" id="Radius"></td>
+    </tr>
+    <tr>
+        <th><label>Areacircle:</label></th>
+        <td id="Area"></td>
+    </tr>
+</table>
+<button onclick="result()"> Result</button>
+<script>
+    function result() {
+        let r=document.getElementById('Radius').value;
+        let a=Math.PI*Math.pow(parseFloat(r),2);
+        document.getElementById('Area').innerText=a;
+    }
+</script>
+</body>
+</html>

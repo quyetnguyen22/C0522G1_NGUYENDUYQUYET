@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <style>
+        div {
+            background-color: orange;
+            width: 320px;
+            height: 150px;
+            padding-top: 20px;
+        }
+        table{
+            width:50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<h2 style="color: blue">AVERAGER SCORE</h2>
+<div>
+    <table>
+        <tr>
+            <th><label for="physics">Physics:</label></th>
+            <th><input type="number" name="physics" placeholder="Physics score" id="physics"></th>
+        </tr>
+        <tr>
+            <th><label for="chemical">Chemical:</label></th>
+            <th><input type="number" name="chemical" placeholder="Chemical score" id="chemical"></th>
+        </tr>
+        <tr>
+            <th><label for="biology">Biology:</label></th>
+            <th><input type="number" name="biology" placeholder="Biology score" id="biology"></th>
+        </tr>
+        <tr>
+            <th><button onclick="averager()" style="background-color: red" >Aver</button></th>
+            <th id="av"></th>
+        </tr>
+    </table>
+</div>
+<script>
+    function averager() {
+        let p=document.getElementById("physics").value;
+        let c=document.getElementById("chemical").value;
+        let b=document.getElementById("biology").value;
+        let av=(parseInt(p)+parseInt(c)+parseInt(b))/3;
+        document.getElementById('av').innerHTML=av;
+    }
+</script>
+</body>
+</html>

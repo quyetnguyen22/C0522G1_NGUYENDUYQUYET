@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perimeter</title>
+</head>
+<body>
+<h1>Perimeter Circle</h1>
+<table>
+    <tr>
+        <td style="font-weight: bold"><label for="Radius">Input Radius:</label></td>
+        <td><input type="number" name="Radius" placeholder="Radius" id="Radius"></td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold"><label>Perimeter:</label></td>
+        <td id="Perimeter"></td>
+    </tr>
+</table>
+<button onclick="result()">Result</button>
+<script>
+    function result() {
+        let r=document.getElementById('Radius').value;
+        let p=2*Math.PI*parseFloat(r);
+        document.getElementById('Perimeter').innerText=p;
+    }
+</script>
+</body>
+</html>
