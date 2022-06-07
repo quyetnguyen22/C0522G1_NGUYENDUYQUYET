@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<script>
+    let user=prompt("Your name:");
+    if (user=="Admin") {
+        let password = prompt("Your password:");
+        if (password=="TheMaster") {
+            alert('Welcome');
+        }
+        else if (password=="null"){
+            alert("Cancal");
+        }
+        else {
+            alert("I don't know");
+        }
+    }
+    else {
+        let user=prompt("Your name:");
+    }
+</script>
+</body>
+</html>
