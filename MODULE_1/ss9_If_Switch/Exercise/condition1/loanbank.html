@@ -8,7 +8,7 @@
 <script>
     let totalLoan = parseFloat(prompt("Your loan: "));
     let timeLoan = parseInt(prompt("Period of loan: "))
-    let loanincr = Math.pow(totalLoan*(1 + 0.081),timeLoan) - totalLoan;
+    let loanincr = totalLoan*Math.pow((1 + 0.081),timeLoan) - totalLoan;
     alert("You have to pay: " + loanincr + " vnd");
 </script>
 </body>
