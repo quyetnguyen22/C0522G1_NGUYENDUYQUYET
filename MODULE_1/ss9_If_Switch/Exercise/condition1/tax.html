@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tax</title>
+</head>
+<body>
+<script>
+    let totalIncome = parseFloat(prompt("Enter your total income:"));
+    let taxCase0 = parseFloat(totalIncome)*5/100 ;
+    let taxCase1 = parseFloat(totalIncome)*10/100 +0.25;
+    let taxCase2 = parseFloat(totalIncome)*15/100 +0.75;
+    let taxCase3 = parseFloat(totalIncome)*20/100 +1.95;
+    let taxCase4 = parseFloat(totalIncome)*25/100 +4.75;
+    let taxCase5 = parseFloat(totalIncome)*30/100 +9.75;
+    let taxCase6 = parseFloat(totalIncome)*35/100 +18.15;
+    if (totalIncome < 5) {
+        alert("You have to pay for the tax: " +taxCase0 + " Mvnd");
+    }
+    else if (totalIncome < 10) {
+        alert("You have to pay for the tax: " +taxCase1 + " Mvnd");
+    }
+    else if (totalIncome < 18) {
+        alert("You have to pay for the tax: " +taxCase2 + " Mvnd");
+    }
+    else if (totalIncome < 32) {
+        alert("You have to pay for the tax: " +taxCase3 + " Mvnd");
+    }
+    else if (totalIncome < 52) {
+        alert("You have to pay for the tax: " +taxCase4 + " Mvnd");
+    }
+    else if (totalIncome < 80) {
+        alert("You have to pay for the tax: " + taxCase5 + " Mvnd");
+    }
+    else {
+        alert("You have to pay for the tax: " + taxCase6 + " Mvnd");
+    }
+</script>
+</body>
+</html>
