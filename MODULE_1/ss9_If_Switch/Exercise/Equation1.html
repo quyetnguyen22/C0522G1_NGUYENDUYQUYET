@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equation1</title>
+</head>
+<body>
+<h2>Equation</h2>
+<table border="2px solid black">
+    <tr>
+        <td><label for="anumb">Input number a:</label></td>
+        <td><input type="number" id="anumb" placeholder="Number a" name="a"></td>
+    </tr>
+    <tr>
+        <td><label for="bnumb">Input number b:</label></td>
+        <td><input type="number" id="bnumb" placeholder="Number b" name="b"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="result()" value="Result" "></td>
+        <td id="equation"></td>
+    </tr>
+</table>
+<script>
+    function result() {
+        let a = document.getElementById("anumb").value;
+        let b = document.getElementById("bnumb").value;
+        let solve = -parseFloat(b)/parseFloat(a);
+        document.getElementById("equation").innerText = solve;
+
+    }
+</script>
+</body>
+</html>

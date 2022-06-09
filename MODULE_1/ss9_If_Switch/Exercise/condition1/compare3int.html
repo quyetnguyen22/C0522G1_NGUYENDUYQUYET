@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>compare</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Input a:"));
+    let b = parseInt(prompt("Input b:"));
+    let c = parseInt(prompt("Input c:"));
+    if (a > b) {
+        if (a>c) {
+            alert(+a + " is max number.");
+        }
+        else if (c > b) {
+            alert(+c + " is max number.");
+        }
+        else {
+            alert(+b + " is max number.");
+        }
+    }
+    else if (b > c) {
+        alert(+b + " is max number.");
+    }
+    else {
+        alert(+c + " is max number.");
+    }
+</script>
+</body>
+</html>

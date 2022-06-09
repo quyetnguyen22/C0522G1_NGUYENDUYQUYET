@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shape</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt("Input shape a:"));
+    let b = parseFloat(prompt("Input shape b:"));
+    let c = parseFloat(prompt("Input shape c:"));
+    let case1 = a + b - c;
+    let case2 = b + c - a;
+    let case3 = a + c -b;
+    let case4 = a*b*c
+    let multi = case1*case2*case3;
+    if (multi > 0) {
+        if (case4 > 0)
+        alert("A triangle.");
+        else {
+            alert("Not a triangle.");
+        }
+    }
+    else {
+        alert("Not a triangle.")
+    }
+</script>
+</body>
+</html>

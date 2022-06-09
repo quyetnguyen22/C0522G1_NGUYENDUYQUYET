@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rank</title>
+</head>
+<body>
+<script>
+    let test = parseFloat(prompt("Input test:"));
+    let midTest = parseFloat(prompt("Input mid-test:"));
+    let finalTest = parseFloat(prompt("Input final-test:"));
+    let averageTests = (test*20/100 + midTest*30/100 + finalTest*50/100)/3;
+    if (averageTests > 8) {
+        alert("Excellent");
+    }
+    else if (averageTests > 7) {
+        alert("Good");
+    }
+    else {
+        alert("Medium");
+    }
+</script>
+</body>
+</html>

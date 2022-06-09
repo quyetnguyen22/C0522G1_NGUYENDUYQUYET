@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nobita</title>
+</head>
+<body onload="listenReady()">
+<img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="200" width="180" alt="Your connection is unstable"/>
+<script>
+    // let nobitaSave = document.getElementById("nobita");
+    // function init() {
+    //    var nobitaSave = document.getElementById("nobita");
+    //     nobitaSave.style.position = "absolute";
+    //     nobitaSave.style.left = "0px";
+    // }
+    function nobitaToLeft() {
+       var nobitaSave = document.getElementById("nobita");
+        nobitaSave.style.left = parseInt(nobitaSave.style.left) + 10 +'px';
+
+    }
+    function nobitaToRight() {
+       var nobitaSave = document.getElementById("nobita");
+        nobitaSave.style.right = parseInt(nobitaSave.style.right) + 10 + "px";
+    }
+    function nobitaToUp() {
+       var nobitaSave = document.getElementById("nobita");
+        nobitaSave.style.top = parseInt(nobitaSave.style.top) - 10 + "px";
+    }
+    function nobitaToDown() {
+        var  nobitaSave = document.getElementById("nobita");
+        nobitaSave.style.top = parseInt(nobitaSave.style.top) + 10 + "px";
+    }
+    function move(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                nobitaToLeft();
+                break;
+            case 39:
+                nobitaToRight();
+                break;
+            case 38:
+                nobitaToUp();
+                break;
+            case 40:
+                nobitaToDown();
+                break;
+        }
+    }
+    function listenReady() {
+        window.addEventListener("keydown", move);
+
+    }
+    // window.onload = init ;
+
+</script>
+</body>
+</html>

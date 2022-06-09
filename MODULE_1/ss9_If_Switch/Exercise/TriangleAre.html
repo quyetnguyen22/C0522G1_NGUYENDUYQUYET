@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TriangleAre</title>
+</head>
+<body>
+<h2>Triangle Are</h2>
+<table border="2px solid back">
+    <tr>
+        <td style="border: 1px solid black; font-weight: bold"><label for="shapea">Input a:</label></td>
+        <td><input type="number" name="a" id="shapea"></td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; font-weight: bold"><label for="shapeb">Input a:</label></td>
+        <td><input type="number" name="b" id="shapeb"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="result()" value="Are"></td>
+        <td id="are"></td>
+    </tr>
+</table>
+<script>
+    function result() {
+        let a = document.getElementById("shapea").value;
+        let b = document.getElementById("shapeb").value;
+        let are = (parseFloat(a)+parseFloat(b))*1/2;
+            document.getElementById("are").innerText = are;
+
+    }
+</script>
+</body>
+</html>

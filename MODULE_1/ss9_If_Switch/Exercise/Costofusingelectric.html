@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cost</title>
+</head>
+<body>
+<script>
+    let pow = parseFloat(prompt("Enter amount of electric used:"));
+    var totalLever1 = pow*1678;
+    var totalLever2 = 50*1678 + (pow-50)*1734;
+    var totalLever3 = 50*1678 + 100*1734 + (pow-100)*2014;
+    var totalLever4 = 50*1678 + 100*1734 + 200*2536 +(pow-300)*2834;
+    var totalLever5 = 50*1678 + 100*1734 + 200*2536 +300*2834 + (pow-401)*2927;
+    if ( pow > 0 && pow < 50 ) {
+        alert(+totalLever1 + " VND");
+    }
+    else if (pow < 100) {
+        alert(+totalLever2 + " VND");
+    }
+    else if (pow < 200) {
+        alert(+totalLever3 + " VND");
+    }
+    else if (pow < 300) {
+        alert(+totalLever3 + " VND");
+    }
+    else if (pow < 400){
+        alert(+totalLever4 + " VND");
+    }
+    else {
+        alert(+totalLever5 + " VND")
+    }
+</script>
+</body>
+</html>

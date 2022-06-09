@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call</title>
+</head>
+<body>
+<script>
+    let totalMin = parseInt(prompt("Input totalMin:"));
+    var case1 = 25000 + 600*totalMin;
+    var case2 = 25000 + 600*50 + (totalMin-50)*400;
+    var case3 = 25000 + 600*50 + 150*400 + (totalMin-150)*200;
+    if (totalMin < 50) {
+        alert("You have to pay: "+case1 + " vnd");
+    }
+    else if (totalMin < 150) {
+        alert("You have to pay: "+case2 + " vnd");
+    }
+    else  {
+        alert("You have to pay: "+case3 + " vnd");
+    }
+</script>
+</body>
+</html>

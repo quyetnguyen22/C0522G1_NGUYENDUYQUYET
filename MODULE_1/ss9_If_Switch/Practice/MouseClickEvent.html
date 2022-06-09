@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MouseClick</title>
+</head>
+<body>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style = "width: 30%" id="Image" alt="Check your connection">
+<p>Click the button to move the ball</p>
+<input type="button" name="button" value="Move" onclick="moveRight()">
+<script>
+    let imgSave = null;
+        imgSave = document.getElementById("Image");
+    //    define the firt position for the object.
+    function init() {
+        imgSave = document.getElementById("Image");
+        imgSave.style.position = "Relative";
+        imgSave.style.left = "0px";
+
+    }
+    function moveRight() {
+        imgSave.style.left = parseInt(imgSave.style.left) + 10 +"px";
+    }
+    window.onload = init;
+</script>
+</body>
+</html>

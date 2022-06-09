@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convert</title>
+</head>
+<body>
+<h1>C-F</h1>
+<div style="border: 3px solid black; width: 285px">
+    <table>
+        <tr style="border: 1px solid black">
+            <td style="font-weight: bold; border: 1px solid black"><label for="ctemp">Input C-Temp:</label></td>
+            <td><input type="number" name="ctemp" id="ctemp" placeholder="Temperature"></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; border: 1px solid black">F-Temp:</td>
+            <td id="ftemp"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="convert()" value="Convert"></td>
+        </tr>
+    </table>
+</div>
+<script>
+    function convert() {
+        let C = document.getElementById("ctemp").value;
+        let F = parseInt(C)*9/5 +32;
+        document.getElementById("ftemp").innerText=F;
+    }
+</script>
+</body>
+</html>

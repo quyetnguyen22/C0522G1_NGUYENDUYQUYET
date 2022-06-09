@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RectangleArea</title>
+</head>
+<body>
+<h2>Rectangle Area</h2>
+<table border="2px solid black">
+    <tr>
+        <td><label for="shapea">Input shape a:</label></td>
+        <td style="border: 1px solid black"><input type="number" name="a" id="shapea" placeholder="Meter"></td>
+    </tr>
+    <tr>
+        <td><label for="shapeb">Input shape b:</label></td>
+        <td style="border: 1px solid black"><input type="number" name="a" id="shapeb" placeholder="Meter"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="result()" value="Result"></td>
+        <td id="are"></td>
+    </tr>
+</table>
+<script>
+    function result() {
+        let a = document.getElementById("shapea").value;
+        let b = document.getElementById("shapeb").value;
+        let are = parseFloat(a)*parseFloat(b);
+        document.getElementById("are").innerText = are;
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sale</title>
+</head>
+<body>
+<script>
+    let totalbill = parseFloat(prompt("Enter total:"));
+    var bill1 = totalbill*3/100;
+    var bill2 = 200*3/100 + (totalbill-200)*5/100;
+    var bil3 = 200*3/100 + 500*5/100 + (totalbill - 500)*10/100;
+    if (totalbill < 200) {
+        alert("You give "+bill1);
+    }
+    else if (totalbill < 500) {
+        alert("You give "+bill2);
+    }
+    else {
+        alert("You give "+bill3);
+    }
+
+</script>
+</body>
+</html>

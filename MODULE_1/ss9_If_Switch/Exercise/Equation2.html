@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equation2</title>
+</head>
+<body>
+<h2>Equation</h2>
+<table border="2px solid black">
+    <tr>
+        <td><label for="anum">Input number a:</label></td>
+        <td colspan="2" ><input type="number" id="anum" name="a" placeholder="Number a"></td>
+    </tr>
+    <tr>
+        <td><label for="bnum">Input number b:</label></td>
+        <td colspan="2" ><input type="number" id="bnum" name="b" placeholder="Number b"></td>
+    </tr>
+    <tr>
+        <td><label for="cnum">Input number c:</label></td>
+        <td colspan="2" ><input type="number" id="cnum" name="c" placeholder="Number c"></td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <td><input type="button" onclick="result()" value="Solve"></td>
+    </tr>
+    <tr>
+        <td>X1:</td>
+        <td id="x2"></td>
+    </tr>
+    <tr>
+        <td>X2:</td>
+        <td id="x1"></td>
+    </tr>
+</table>
+
+<script>
+    function result() {
+        let a = document.getElementById("anum").value;
+        let b = document.getElementById("bnum").value;
+        let c = document.getElementById("cnum").value;
+        let delta = Math.pow(parseFloat(b),2) - 4*parseFloat(a)*parseFloat(c);
+        if (delta < 0) {
+            document.getElementById("x").innerText = "Non-zero equation";
+        }
+        else if (delta === 0) {
+            let solve1 = (-parseFloat(b))/(2*parseFloat(a));
+            document.getElementById("x").innerText = solve1;
+        }
+        else {
+            let solve2 = (-parseFloat(b)+Math.sqrt(delta))/(2*parseFloat(a));
+            let solver3 = (-parseFloat(b)-Math.sqrt(delta))/(2*parseFloat(a));
+            document.getElementById("x1").innerText = solve2 ;
+            document.getElementById("x2").innerText = solver3;
+         }
+
+    }
+</script>
+</body>
+</html>
