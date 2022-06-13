@@ -5,6 +5,7 @@
     <title>gessNumber</title>
 </head>
 <body>
+<button onclick="doanso()">Bắt đầu</button>
 <script>
     function doanso() {
         debugger;
@@ -15,7 +16,7 @@
         let count = 0;
         while (number_check !== number_ran) {
             count++;
-            if (count == 4) {
+            if (count === 4) {
                 alert("Bạn hết số lần đoán")
                 break;
             } else if (number_check < number_ran) {
