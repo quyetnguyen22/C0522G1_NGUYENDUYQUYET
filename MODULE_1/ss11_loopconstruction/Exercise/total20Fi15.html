@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>totalFi</title>
+</head>
+<body>
+<script>
+    let num = parseInt(prompt("Enter number: "));
+    let num1 = 0;
+    let num2 = 1;
+    let num3;
+    let sum = 1;
+    for (i = 0; i < (num-2); i++) {
+        num3 = num1 + num2;
+        num1 = num2;
+        num2 = num3;
+        sum += num3;
+    }
+    document.write("Sum of " + num + " the first Fibinaci number is: "+ sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>multipli</title>
+</head>
+<body>
+<h3>Muitiplication Table</h3>
+<script>
+    var table = "<table border='2px solid black'>";
+    var i;
+    var j;
+    for (i = 1; i < 10; i++) {
+        table = table + "<tr>";
+        for (j = 2; j < 10; j++) {
+            table = table + "<td>" + j   + " x " +  i + " = " + i*j + "</td>";
+        }
+        table = table + "</tr>";
+    }
+    table = table + "</table>";
+    document.write(table);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>retangle</title>
+</head>
+<body>
+<script>
+    let table = "<table>";
+    let i, j;
+    for (i = 0; i < 7; i++) {
+        table = table + "<tr>";
+        for (j = 0; j < 21; j++) {
+            if (i == 0 || i == 6) {
+                table = table + "<td>" + "*" + "</td>";
+            }
+            else {
+                if (j == 0 || j == 20) {
+                    table = table + "<td>" + "*" + "</td>";
+                }
+                else {
+                    table = table + "<td>" + " " + "</td>";
+                }
+            }
+
+        }
+    }
+    table = table + "</table>";
+    document.write(table);
+</script>
+</body>
+</html>

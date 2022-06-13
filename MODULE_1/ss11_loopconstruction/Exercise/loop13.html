@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonaci</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt("Enter number: "));
+    let num1 = 0;
+    let num2 = 1;
+    let num3;
+    let numF = num1 + ", " + num2;
+    for (i = 0; i < (input - 2); i++) {
+        num3 = num1 + num2;
+        numF += ", " + num3;
+        num1 = num2;
+        num2 = num3;
+    }
+    document.write(numF);
+</script>
+</body>
+</html>

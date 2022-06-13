@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonaci</title>
+</head>
+<body>
+<script>
+    let num1 = 0;
+    let num2 = 1;
+    let num3;
+    for (let i = 0; i < 100; i++) {
+        num3 = num1 + num2;
+        num1 = num2;
+        num2 = num3;
+        if (num3%5 === 0) {
+            document.write(num3);
+            break;
+        }
+    }
+</script>
+</body>
+</html>

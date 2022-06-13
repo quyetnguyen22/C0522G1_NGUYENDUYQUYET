@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>triangle</title>
+</head>
+<body>
+<script>
+    let table = "<table>";
+    let i, j;
+    for (i = 0; i < 5; i++) {
+        table = table + "<tr>";
+        for (j = 0; j <= i; j++) {
+            table = table + "<td>" + "*" + "</td>";
+        }
+        table = table + "</tr>";
+    }
+    table = table + "</table> <br>";
+    document.write(table);
+    //-----------------------------------------------------
+    let table1 = "<table>";
+    let h, k;
+    for (h = 0; h < 5; h++) {
+        table1 = table1 + "<tr>";
+        for (k = 5; k > h; k--) {
+            table1 = table1 + "<td>" + "*" + "<td>";
+        }
+    }
+    table1 = table1 + "</table> <br>";
+    document.write(table1);
+
+    //    -------------------------------------------------------
+    let table2 = "<table>";
+    let z, x;
+    for (z = 0; z < 5; z++) {
+        table2 = table2 + "<tr>";
+        for (x = 0; x <= 5; x++) {
+            if (x + z >= 5) {
+                table2 = table2 + "<td>" + "*" + "<td>";
+            } else {
+                table2 = table2 + "<td>" + " " + "<td>";
+            }
+        }
+    }
+    table2 = table2 + "</table> <br>";
+    document.write(table2);
+    //   -----------------------------------------------------------
+    let table3 = "<table>";
+    let a, s;
+    for (a = 0; a < 5; a++) {
+        table3 = table3 + "<tr>";
+        for (s = 0; s < 5; s++) {
+            if (a <= s) {
+                table3 = table3 + "<td>" + "*" + "<td>";
+            } else {
+                table3 = table3 + "<td>" + " " + "<td>";
+            }
+        }
+    }
+    table3 = table3 + "</table> <br>";
+    document.write(table3);
+</script>
+</body>
+</html>

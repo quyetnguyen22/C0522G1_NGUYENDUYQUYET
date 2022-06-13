@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>heart</title>
+</head>
+<body>
+<script>
+    var i, j;
+    var table = "<table>";
+    for (i = 1; i <= 6; i++) {
+        table = table + "<tr>";
+        for (j = 1; j <= 7; j++) {
+            if (i == 1) {
+                if (j == 1 || j == 4 || j == 7) {
+                    table = table + "<td>" + "" + "</td>>";
+                } else {
+                    table = table + "<td>" + "*" + "</td>>";
+                }
+            }
+            else if (i == 2 || i == 3) {
+                table = table + "<td>" + "*" + "</td>>";
+            }
+            else {
+                if (j < 4 && (i - j) >= 3) {
+                    table = table + "<td>" + "" + "</td>>";
+                }
+                 else if (j > 4 && (j - i) <= 3) {
+                        table = table + "<td>" + "" + "</td>>";
+                    }
+                 else {
+                    table = table + "<td>" + "*" + "</td>>";
+                }
+            }
+
+        }
+        table = table + "</tr>";
+    }
+    table = table + "</table>";
+    document.write(table);
+</script>
+</body>
+</html>
