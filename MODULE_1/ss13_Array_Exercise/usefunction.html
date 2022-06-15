@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>usefunction</title>
+</head>
+<body>
+<script>
+    // let a = ["a", "b", "c"];
+    // // document.write(a.toString() + "<br>");
+    // // document.write(a.join(',') + "<br>");
+    // let b = ["246758"];
+    // let str =b.toString();
+    // for (i=0;i<str.length; i++) {
+    //     if (str[i]%2!==0 && str[i-1]%2!==0) {
+    //     str[i].push("-", str[i]);
+    //     }
+    //
+    // }
+    // document.write(str)
+    let input = prompt("Enter the range of letters:")
+    let arr = [];
+    for (let i=0;i<input.length;i++) {
+        if (input[i]===input[i].toLowerCase()) {
+            arr.push(input[i].toUpperCase());
+        }
+        else if (input[i]===input[i].toUpperCase()) {
+            arr.push(input[i].toLowerCase());
+        }
+
+            } document.write(arr.join(""));
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dictionary</title>
+</head>
+<body>
+<h1><label for="input">DICTIONARY</label></h1>
+<input type="text" name="dictionary" id="input">
+<input type="button" name="translate" onclick="trans()" value="trans">
+<hr/>
+<div id="result"></div>
+<script>
+   function trans() {
+       let a = ["hi", "goodbye", "good night"];
+       let b = ["xin chào", "tạm biệt", "chúc ngủ ngon"];
+       let input = document.getElementById("input").value;
+       for (i = 0; i < a.length; i++) {
+           for (j=0;j<=i;j++) {
+               if (input === a[i]) {
+                   document.getElementById("result").innerText = b[j]
+               }
+           }
+
+       }
+
+   }
+</script>
+</body>
+</html>

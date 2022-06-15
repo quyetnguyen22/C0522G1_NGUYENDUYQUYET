@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reverse</title>
+</head>
+<body>
+<h2><label for="input">Reserve</label></h2>
+<input type="text" id="input">
+<input type="button" value="add" onclick="add()">
+<input type="button" value="display" onclick="display()">
+<input type="button" value="reverse" onclick="reverse()">
+<div id="display"></div>
+<br>
+<div id="reverse"></div>
+<script>
+    let array = [];
+    function add() {
+        let x = document.getElementById("input").value;
+        array.push(x);
+        document.getElementById("input").value ="";
+
+    }
+    function display() {
+        document.getElementById("display").innerHTML = array;
+    }
+    function reverse() {
+        let a;
+        for (let i = 0; i < array.length/2; i++) {
+            a = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = a;
+        }
+        document.getElementById("reverse").innerText = array;
+        // typeof (arr);
+
+    }
+</script>
+</body>
+</html>

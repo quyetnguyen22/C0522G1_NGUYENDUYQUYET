@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>link</title>
+</head>
+<body>
+<script>
+    let a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let b = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    let c = [];
+    for (let i = 0; i < a.length; i++) {
+        c[i] = a[i];
+    }
+    for (let j = 0; j < b.length; j++) {
+        c[a.length + j] = b[j];
+    }
+    document.write(c);
+</script>
+</body>
+</html>

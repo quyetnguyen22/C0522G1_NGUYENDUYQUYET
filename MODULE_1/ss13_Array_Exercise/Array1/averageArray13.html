@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>averager</title>
+</head>
+<body>
+<h1><label for="everager">AVERAGER OF A ARRAY</label></h1>
+<input type="number" id="everager" name="input">
+<input type="button" onclick="add()" value="add">
+<input type="button" onclick="display()" value="display">
+<input type="button" onclick="result()" value="result">
+<div id="show"></div>
+<div id="result"></div>
+<script>
+    let arr = Array();
+
+    function add() {
+        let x;
+        x = document.getElementById("everager").value;
+        arr.push(x);
+        document.getElementById("everager").value = "";
+    }
+
+    function display() {
+
+        for (let i=0; i<arr.length; i++) {
+            let max;
+            if (arr[i]<arr[i+1]) {
+                max = arr[i+1];
+                document.getElementById("show").innerHTML = "Value max: " + max;
+            }
+        }
+
+    }
+
+    function result() {
+        let sum = 0;
+        for (let j = 0; j < arr.length; j++) {
+            sum = sum + parseInt(arr[j]);
+        }
+        document.getElementById("result").innerText = "Averager of the array is: " + sum/arr.length;
+    }
+</script>
+</body>
+</html>

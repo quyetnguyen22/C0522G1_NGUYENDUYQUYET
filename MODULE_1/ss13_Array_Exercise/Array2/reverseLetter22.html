@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reveser</title>
+</head>
+<body>
+<script>
+    let a =  [ 'c', 's', 'c', '2', '6', '1' ];
+
+    for (i=0; i<a.length/2; i++){
+        let x = a[i];
+        a[i]=a[a.length-i-1];
+        a[a.length-i-1]=x;
+    }
+    document.write(a);
+</script>
+</body>
+</html>
