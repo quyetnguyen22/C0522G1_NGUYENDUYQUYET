@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>converter</title>
+</head>
+<body>
+<h2>TEMPERRATURE CONVERTER</h2>
+<P>Type a value in the Fahrenheit field to convert the value</P>
+<span><label for="f">Fehrenheit:</label></span>
+<input type="number" id="f" name="f" oninput="cToF()" onchange="cToF()"> <br>
+<span><label for="f" style="padding-right: 25px">Celcius:</label></span>
+<span id="c"></span>
+<script>
+    function cToF() {
+        let F = document.getElementById("f").value;
+        document.getElementById("c").innerHTML = (parseFloat(F)-32)/1.8;
+    }
+</script>
+</body>
+</html>

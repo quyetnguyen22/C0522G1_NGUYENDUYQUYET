@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>areaAndPerimeter</title>
+</head>
+<body>
+<script>
+    let radius = parseInt(prompt("Input the radius:"));
+
+    function calAreaAndPerimeter() {
+        let area = Math.PI * Math.pow(radius, 2);
+        let perimeter = 2 * Math.PI * radius;
+        alert("The AREA of the circle with " + radius + " radius is: " + area);
+        alert("The PERIMETER of the circle with " + radius + " radius is: " + perimeter);
+
+    }
+
+    calAreaAndPerimeter()
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convert</title>
+</head>
+<body>
+<h2>CONVERT</h2>
+<table border ="1px solid black">
+    <tr>
+        <th>Foot</th>
+        <th>Meter</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="foot" height="18" oninput="footToMeter()"></td>
+        <td id="outMet" height="18"></td>
+    </tr>
+    <tr>
+        <th>Meter</th>
+        <th>Foot</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="met" height="18" oninput="meterToFoot()"></td>
+        <td id="outFoot" height="18"></td>
+    </tr>
+</table>
+<script>
+    function footToMeter(foot) {
+        foot = document.getElementById("foot").value;
+         meter = 0.305 * foot;
+        document.getElementById("outMet").innerText =meter;
+    }
+    function meterToFoot(met) {
+        met = document.getElementById("met").value;
+        foot = 3.279 * met;
+        document.getElementById("outFoot").innerText = foot;
+    }
+</script>
+</body>
+</html>

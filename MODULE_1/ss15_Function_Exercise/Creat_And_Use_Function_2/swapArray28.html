@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>swapArray</title>
+</head>
+<body>
+<script>
+    function swapArray(arr) {
+        for (i = 0; i < arr.length / 2; i++) {
+            let a = arr[i];
+            let b = arr[arr.length - 1 - i];
+            arr[i] = b;
+            arr[arr.length - 1 - i] = a;
+
+        }
+        document.write(arr);
+
+    }
+
+    let arr1 = [-2, 3, 5, 1, -6, 4, 0];
+    swapArray(arr1)
+</script>
+</body>
+</html>

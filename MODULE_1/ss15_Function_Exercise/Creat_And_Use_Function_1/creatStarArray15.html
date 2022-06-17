@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>star</title>
+</head>
+<body>
+<script>
+    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let constellation = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let nameOfStar = prompt("Name of the star:"); // Vega
+
+    function creatArray(arr) {
+        for (i = 0; i <= star.length; i++) {
+            if (nameOfStar === star[i]) {
+                document.write(constellation[i]);
+                break;
+            }
+            if(i===star.length) {
+                alert("Do not find this star.");
+            }
+        }
+
+    }
+    creatArray(star);
+</script>
+</body>
+</html>

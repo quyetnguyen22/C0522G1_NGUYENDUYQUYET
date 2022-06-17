@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parameter</title>
+</head>
+<body>
+<script>
+    function getParameter(a, b) {
+        if (a > b) {
+            alert(a + " greater than " + b)
+        } else {
+            let result = a + b;
+            alert("Sum of the fist and the second number is: " + result);
+        }
+
+    }
+
+    let num1 = parseInt(prompt("Enter the first number:"));
+    let num2 = parseInt(prompt("Enter the second number:"));
+    getParameter(num1, num2);
+
+</script>
+</body>
+</html>
