@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex1</title>
+</head>
+<body>
+<!--Viết 1 hàm nhận vào 1 số nguyên bất kì. Hiển thị
+các số KHÔNG phải số nguyên tố từ 0 đến số đấy.-->
+<script>
+    let num = parseInt(prompt("Input an integer number:"));
+
+    function getIntNum() {
+        let first = 0 + "," + 1;
+        let second = first + ",";
+        for (let i = 0; i <= num; i++) {
+            let count = 0;
+            for (let j = 0; j < i; j++) {
+                if (i % j === 0) {
+                    count++;
+                    if (count === 2) {
+                        second += i + ", ";
+                    }
+                }
+            }
+        }
+        document.write("The number is not an integer: " + "<br>" + second);
+    }
+
+    getIntNum()
+</script>
+</body>
+</html>

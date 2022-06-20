@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>count</title>
+</head>
+<body>
+<script>
+    let arr = [1,6,5,7,8,2,5,6,2,8,2];
+    function countElement() {
+        for (let i=0; i<=arr.length; i++) {
+            let count = 0;
+            for (let j=0; j<arr.length; j++) {
+                if (arr[i] === arr[j+1]) {
+                    count++;
+            }
+
+            } document.write("The number " + arr[i] + " appears " + count + " times." + "<br>" );
+        }
+
+    }
+    countElement()
+</script>
+</body>
+</html>

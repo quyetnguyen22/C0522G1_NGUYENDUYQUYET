@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor (tempC) {
+            this.tempC = tempC;
+        }
+        getConvertCToF(){
+            return this.tempC*1.8 +32;
+        }
+        getConvertCToK() {
+            return this.tempC + 273.15;
+        }
+    }
+    let temperature = new Temperature(25)
+    document.write(temperature.tempC + " Celsius equal to:" + "<br>");
+    document.write( temperature.getConvertCToF() + " Fahrenheit" + "<br>");
+    document.write( temperature.getConvertCToK() + " Kelvin" +"<br>");
+</script>
+</body>
+</html>

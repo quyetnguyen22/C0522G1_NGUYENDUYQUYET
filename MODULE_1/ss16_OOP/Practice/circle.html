@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>circle</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius, color) {
+            this.radius = radius;
+            this.color = color;
+        }
+        // circle(){
+        //     document.write(this.radius + this.color);
+        // }
+        getRadius() {
+            return this.radius;
+        }
+        getArea() {
+            return Math.PI*this.radius*this.radius;
+        }
+    }
+    let show = new Circle(2, 'red');
+    document.write(show.getRadius()+ "<br>" + show.getArea() + "<br>");
+    // show.circle();
+</script>
+</body>
+</html>

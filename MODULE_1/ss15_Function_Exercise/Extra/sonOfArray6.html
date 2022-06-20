@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array</title>
+</head>
+<body>
+<script>
+    let arr1 = [0, 1, 2, 3, 4, 5, 6, 7];
+    let arr2 = [5, 6, 7];
+
+    function getArray() {
+        for (let i = 0; i < arr1.length; i++) {
+            let count = 0;
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i + j] === arr2[j]) {
+                    count++;
+                }
+            } if (count === arr2.length) {
+                document.write("True.");
+            }
+
+        }
+
+    }
+
+    getArray()
+</script>
+</body>
+</html>

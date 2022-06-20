@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>print</title>
+</head>
+<body>
+<script>
+    /* Viết 1 hàm nhận vào 1 số nguyên duy nhất hàm
+    trả về mảng số nguyên từ 0 đến số được truyền
+    vào và phải thỏa mãn 2 yêu cầu: thứ nhất số đó
+    thuộc dãy fibonacci , thứ 2 số đó phải là số nguyên
+    tố. In ra mảng đấy*/
+    let input = parseInt(prompt("Input a number:"));
+    let array = Array();
+
+    function checkFibonaci(input) {
+        let firstNum = 1;
+        let secondNum = 1;
+        for (let i = 1; i < input; i++) {
+            console.log(i)
+            let thirdNum = firstNum + secondNum;
+            firstNum = secondNum;
+            secondNum = thirdNum;
+            let fibonaciNum = thirdNum;
+            return input;
+        }
+    }
+
+    function checkInteger(input) {
+        let count = 0;
+        for (let j = 1; j <= input; j++) {
+            if (input % j === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            return input;
+        }
+    }
+
+    function addElement(input) {
+        for (let i = 0; i <= input; i++) {
+            if (checkFibonaci(i) && checkInteger(i)) {
+                arr.push(i);
+
+            }
+        }
+        document.write(arr);
+    }
+
+    addElement()
+
+    /*
+     let input = parseInt(prompt("Input a number:"));
+        function addElemrnt() {
+            let array = Array();
+            let firstNum = 1;
+            let secondNum = 1;
+            for (let i = 1; i < input; i++) {
+                console.log(i)
+                let thirdNum = firstNum + secondNum;
+                firstNum = secondNum;
+                secondNum = thirdNum;
+                let fibonaciNum = thirdNum;
+                console.log(fibonaciNum)
+                if (fibonaciNum <= input) {
+                    let count = 0;
+                    for (let j = 1; j <= fibonaciNum; j++) {
+                        if (fibonaciNum % j === 0) {
+                            count++;
+                        }
+                    }
+                    if (count === 2) {
+                        array.push(fibonaciNum);
+                    }
+
+                }
+
+            }
+            document.write(array);
+            }
+            addElemrnt()
+
+        }*/
+    /*
+    let array = Array();
+    let add = 0;
+    let firstNum = 1;
+    let secondNum = 1;
+    do  {
+        let i = 1;
+        let thirdNum = firstNum + secondNum;
+        firstNum = secondNum;
+        secondNum = thirdNum;
+        let fibonaciNum = thirdNum;
+        let count = 0;
+        for (let j = 1; j <= fibonaciNum; j++) {
+            if (fibonaciNum % j === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            add++;
+            array.push(fibonaciNum);
+        }
+        i++;
+
+    } while (add!=input)
+    document.write(array);
+    */
+
+    addElemrnt()
+</script>
+</body>
+</html>

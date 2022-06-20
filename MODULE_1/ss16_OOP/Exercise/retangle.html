@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>retangle</title>
+</head>
+<canvas id="retangle" width="500" height="300"></canvas>
+<body>
+<script>
+    class Retangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        RetangleA() {
+            var Re = document.getElementById("retangle");
+            var reDispay = Re.getContext("2d");
+            reDispay.moveTo(0, 0);
+            reDispay.lineTo(this.length, 0);
+            reDispay.lineTo(this.length, this.width);
+            reDispay.lineTo(0, this.width);
+            reDispay.lineTo(0, 0);
+            reDispay.stroke();
+            document.write("<br>" + "Perimeter: " + this.getPerimeter() + "<br>" + "Area: " + this.getArea());
+        }
+
+
+        getArea() {
+            return this.width * this.length
+        }
+
+        getPerimeter() {
+            return (this.width + this.length) * 2;
+        }
+
+        setLength(newLength) {
+            this.length = newLength;
+        }
+
+        setWidth(newWidth) {
+            this.width = newWidth;
+        }
+    }
+
+    let retangle1 = new Retangle(500, 300);
+    document.write("<br>" + "Perimeter: " + retangle1.getPerimeter() + "<br>" + "Area: " + retangle1.getArea());
+    retangle1.setLength(300);
+    retangle1.setWidth(250);
+    retangle1.RetangleA();
+</script>
+</body>
+</html>

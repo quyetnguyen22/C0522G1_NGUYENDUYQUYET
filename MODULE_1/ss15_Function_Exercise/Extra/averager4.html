@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>averager</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let element = parseInt(prompt("Input a number of elements:"));
+
+    function addElement() {
+        for (let i = 1; i <= element; i++) {
+            let input = +parseInt(prompt("Input a number:"));
+            array.push(input);
+            let count = 0;
+            let sum = 0;
+            for (let j = 1; j < array.length; j += 2) {
+                if (array[j] % 2 === 0) {
+                    count++;
+                    sum += array[j];
+                    var average = sum / count;
+                }
+            }
+        }
+        document.write(array + "<br>");
+        document.write("Averager: " + average);
+    }
+
+    addElement()
+</script>
+</body>
+</html>
