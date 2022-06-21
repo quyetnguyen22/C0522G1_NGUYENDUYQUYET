@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>move</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    class Hero {
+        constructor(image, top, left, right, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.right = right;
+
+
+        }
+
+        getHeroElement() {
+            return '<img width="' + this.size + '"' + ' height="' + this.size + '"' + ' src="' + this.image + '"' + ' style="top: ' + this.top + 'px; left:' + this.left + 'px; right:' + this.left + 'px;position:absolute;" />';
+        }
+
+        moveRight() {
+            this.left += 20;
+            console.log('ok: ' + this.left);
+        }
+
+        moveDown() {
+            this.top += 10;
+            console.log('ok: ' + this.top);
+        }
+
+    }
+
+    var hero = new Hero('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=0.672xw:1.00xh;0.166xw,0&resize=640:*', 20, 30, 20, 200);
+
+    function start() {
+        if (hero.left < window.innerWidth - hero.size - hero.right) {
+            hero.moveRight();
+            console.log(window.innerWidth);
+        } else if (hero.left > window.innerWidth - hero.size - hero.right) {
+            hero.moveDown();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
+
+    start();
+</script>
+</body>
+</html>

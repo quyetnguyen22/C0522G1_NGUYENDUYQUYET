@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <title>retangle</title>
 </head>
-<canvas id="retangle" width="500" height="300"></canvas>
+<canvas id="rectangle" width="500" height="300"></canvas>
 <body>
 <script>
-    class Retangle {
+    class Rectangle {
         constructor(length, width) {
             this.length = length;
             this.width = width;
         }
 
         RetangleA() {
-            var Re = document.getElementById("retangle");
-            var reDispay = Re.getContext("2d");
-            reDispay.moveTo(0, 0);
-            reDispay.lineTo(this.length, 0);
-            reDispay.lineTo(this.length, this.width);
-            reDispay.lineTo(0, this.width);
-            reDispay.lineTo(0, 0);
-            reDispay.stroke();
+            var Re = document.getElementById("rectangle");
+            var reDisplay = Re.getContext("2d");
+            reDisplay.moveTo(0, 0);
+            reDisplay.lineTo(this.length, 0);
+            reDisplay.lineTo(this.length, this.width);
+            reDisplay.lineTo(0, this.width);
+            reDisplay.lineTo(0, 0);
+            reDisplay.stroke();
             document.write("<br>" + "Perimeter: " + this.getPerimeter() + "<br>" + "Area: " + this.getArea());
         }
 
@@ -43,7 +43,7 @@
         }
     }
 
-    let retangle1 = new Retangle(500, 300);
+    let retangle1 = new Rectangle(500, 300);
     document.write("<br>" + "Perimeter: " + retangle1.getPerimeter() + "<br>" + "Area: " + retangle1.getArea());
     retangle1.setLength(300);
     retangle1.setWidth(250);
