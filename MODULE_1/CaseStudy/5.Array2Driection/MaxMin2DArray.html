@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MaxMin</title>
+</head>
+<body>
+<script>
+    function findMaxMin(arr) {
+        let max = arr[0][0];
+        let min = arr[0][0];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (max < arr[i][j]) {
+                    max = arr[i][j];
+                } else if (min > arr[i][j]) {
+                    min = arr[i][j];
+                }
+            }
+
+        }
+        document.write("Max value in the Array: " + max + "<br>");
+        document.write("Min value in the Array: " + min + "<br>");
+    }
+
+    let arr1 = [[1, 5, 2, 4], [2, 4, 7, 6, 5, 7]];
+    findMaxMin(arr1)
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>capitalize letter</title>
+</head>
+<body>
+<script>
+    debugger
+    // console.log(newText)
+    function main() {
+        let text1 = prompt("Input your name: ") ;
+        let newText = text1.toLowerCase();
+        capitalizeFirstLetter(newText);
+        findLongest(capitalizeFirstLetter(text))
+    }
+    main()
+    function capitalizeFirstLetter(myText) {
+        let word = myText.split(" ");
+        for (let i = 0; i < word.length; i++) {
+            word[i] = word[i][0].toUpperCase() + word[i].substr(1);
+        }
+        let myNewText = word.join(" ");
+        document.write(myNewText + "<br>");
+        console.log(typeof word)
+        return word;
+        // word.map((word) => {
+        //     return word[0].toUpperCase() + word.substring(1);
+        // }).join((" "));
+        //     document.write(join((" ")));
+    }
+
+    //truong tan hai
+    function findLongest(text) {
+        text = capitalizeFirstLetter(newText);
+        let longestWord = text[0];
+        // console.log(longestWord.length)
+        for (let i = 1; i <= text.length - 1; i++) {
+            if (text[i].length > longestWord.length) {
+                longestWord = text[i]
+            }
+        }
+        document.write(longestWord);
+        return longestWord;
+    }
+    findLongest()
+
+</script>
+</body>
+</html>

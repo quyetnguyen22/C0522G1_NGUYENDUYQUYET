@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>count</title>
+</head>
+<body>
+<script>
+    // let str1 = "cabca";
+    let str2 = prompt("Enter a range of characters:")
+    countDifferentCharacter(str1)
+    function countDifferentCharacter(str) {
+        let arr = [str[0]];
+        // console.log(arr)
+        let index = 0;
+        let temp = 0;
+        for (let i = 1; i < str.length; i++) {
+            let count = 0;
+            for (let j = 0; j < i; j++) {
+                if (str[i] !== arr[j]) {
+                    temp = str[i]
+                    console.log(str[i])
+                    count++;
+                    index = i;
+                }
+                if (count === index) {
+                    arr.push(temp);
+            }
+            }
+        }
+        let count = arr.length;
+        document.write("differentSymbolsNaive(s): "  + count + "<br>");
+        document.write(arr);
+    }
+</script>
+</body>
+</html>

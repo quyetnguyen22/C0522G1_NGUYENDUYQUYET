@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salary</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt("Input your income:"));
+    let crossSalary = 0;
+    if (input>15000000) {
+        crossSalary = input * 0.2;
+        document.write("You must pay: " + crossSalary + " to the tax " + "<br>");
+        document.write("Your gross salary: " + (input-crossSalary));
+    }
+    else if (input>=7) {
+        crossSalary = input * 0.1;
+        document.write("You must pay: " + crossSalary + " to the tax " + "<br>");
+        document.write("Your gross salary: " + (input-crossSalary));
+    }
+    else {
+        rossSalary = input * 0.05;
+        document.write("You must pay: " + crossSalary + " to the tax " + "<br>");
+        document.write("Your gross salary: " + (input-crossSalary));
+    }
+</script>
+</body>
+</html>

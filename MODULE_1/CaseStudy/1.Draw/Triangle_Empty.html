@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TriangleEmpty</title>
+</head>
+<body>
+<script>
+    let inputHeight = parseInt(prompt("Enter the height of triangle: "));
+    let table = "<table>";
+    for (let i = 1; i <= inputHeight; i++) {
+        table = table + "<tr>";
+        for (let j = 1; j <= i; j++) {
+            if (j === 1 || j === i) {
+                table = table + "<td>" + "*" + "</td>>";
+            } else if (i === inputHeight) {
+                table = table + "<td>" + "*" + "</td>>";
+            } else {
+                table = table + "<td>" + " " + "</td>>";
+            }
+        }
+        table = table + "</tr>";
+    }
+    table = table + "</table>";
+    document.write(table);
+
+</script>
+</body>
+</html>

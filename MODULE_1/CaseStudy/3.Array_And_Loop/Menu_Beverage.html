@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beverage</title>
+</head>
+<body>
+<script>
+    var menu = ['Cafe', 'Orange Juice', 'Carrot juice', 'Tomato juice', 'Water', 'Coconut'];
+    var price = [15000, 35000, 20000, 15000, 10000, 30000];
+    var i = 1;
+    var sum = 0;
+    do {
+        var choice = parseInt(prompt("What would you like to drink? " + " 1.Cafe " +  " 2.Orange Juice " + " 3.Carrot juice " + " 4.Tomato juice " + " 5.Water " + " 6.Coconut " + " 7.Exit "))
+        if (choice !== 7) {
+            var orderPrice = parseInt(prompt(" Price of " + menu[choice - 1] + " is: " + price[choice - 1] + "vnd" + " Enter the number of: "));
+            sum += price[choice - 1] * orderPrice;
+        }
+        i++;
+    } while (choice !== 7)
+    alert("You need to pay " + sum + " for the total bill.")
+
+</script>
+</body>
+</html>

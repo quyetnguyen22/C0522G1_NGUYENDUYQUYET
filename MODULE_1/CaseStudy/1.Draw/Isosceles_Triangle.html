@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Isosceles_Triangle</title>
+</head>
+<body>
+<script>
+    let inputHeight = parseInt(prompt("Enter the height of triangle: "));
+    let table = "<table>";
+    for (let i = 0; i < inputHeight; i++) {
+        table = table + "<tr>";
+        for (let j = 0; j <= inputHeight + 2 + i; j++) {
+            if (j >= inputHeight - i) {
+                table = table + "<td>" + "*" + "</td>";
+                if (j >= i + inputHeight) {
+                    break;
+                }
+            } else {
+                table = table + "<td>" + " " + "</td>";
+            }
+        }
+        table = table + "</tr>";
+    }
+    table = table + "</table>";
+    document.write(table)
+</script>
+</body>
+</html>

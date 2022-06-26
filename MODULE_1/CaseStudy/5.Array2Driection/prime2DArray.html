@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime</title>
+</head>
+<body>
+<script>
+    debugger
+    let arr1 = [[1, 2, 4, 6, 7, 8], [13, 89, 15, 23]];
+    findPrime(arr1);
+    function findPrime(arr) {
+        let countInt = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                let count = 0;
+                for (let k = 1; k <= arr[i][j]; k++) {
+                    if (arr[i][j] % k === 0) {
+                        count++;
+                    }
+                }
+                if (count === 2) {
+                    document.write(arr[i][j] + "<br>" );
+                    countInt++
+                }
+             }
+        }
+        document.write("There are " + countInt + " integer.");
+    }
+
+</script>
+</body>
+</html>

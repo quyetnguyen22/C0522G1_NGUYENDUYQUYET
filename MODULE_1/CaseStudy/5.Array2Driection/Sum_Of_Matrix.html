@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SumOfMatrix</title>
+</head>
+<body>
+<script>
+    let row = parseInt(prompt("Enter the number of row:"));
+    let col = parseInt(prompt("Enter the number of col:"));
+    let matrix1 = [];
+    for (let i = 0; i < row; i++) {
+        matrix1[i] = [];
+        for (let j = 0; j < col; j++) {
+           matrix1[i][j] = parseInt(prompt("Enter elements of Row: " + i + " and Column " + j));
+        }
+    }
+    console.table(matrix1);
+    document.write(matrix1 + "<br>");
+    function calSumOFMatrix(matrix) {
+        let sum = 0;
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 === 0) {
+                    sum += matrix[i][j];
+                }
+            }
+        }
+        document.write("Sum of Evens in the array: " + sum);
+    }
+    calSumOFMatrix(matrix1)
+
+
+</script>
+</body>
+</html>

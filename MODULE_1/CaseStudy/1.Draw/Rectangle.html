@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+Rectangle
+<script>
+    let inputLenght = parseInt(prompt("Enter the length of rectangle: "));
+    let inputWidth = parseInt(prompt("Enter the width of rectangle: "));
+    let table = "<table>";
+    for (let i = 1; i <= inputWidth; i++) {
+        table = table +"<tr>";
+        for (let j = 1; j <= inputLenght; j++) {
+            if (i ===1 || i === inputWidth) {
+                table = table + "<td>" + "*" + "</td>>";
+            }
+            else {
+                if (j === 1 || j === inputLenght) {
+                    table = table + "<td>" + "*" + "</td>>";
+                }
+                else {
+                    table = table + "<td>" + " " + "</td>>";
+                }
+            }
+        }
+        table =table + "</tr>";
+    }
+    table = table + "</table>";
+document.write(table);
+</script>
+</body>
+</html>

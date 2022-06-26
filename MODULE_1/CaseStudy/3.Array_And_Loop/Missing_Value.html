@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missing_Value</title>
+</head>
+<body>
+<script>
+    function missingValue(a, b) {
+        let c = [];
+        let j = 0;
+        if (a.length < b.length) {
+            for (let i = 0; i < b.length; i++) {
+                for (; j < b.length; j++) {
+                        if (a[i] === b[j]) {
+                            j = j+1;
+                       break;
+                    } else {
+                            c.push(b[j]);
+                    }
+                }
+            }
+        }
+
+        document.write(c)
+    }
+    let d = [7,2,5,3,5,3];
+    let e = [13,7,2,5,4,6,12,3,5,3,11,15];
+    missingValue(d,e)
+</script>
+</body>
+</html>
