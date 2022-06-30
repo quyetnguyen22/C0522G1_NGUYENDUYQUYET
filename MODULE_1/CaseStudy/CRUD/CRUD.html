@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="demo.css">
+    ​
+</head>
+<body>
+<h1 align="center">Danh sách điện thoại</h1>
+<div>
+    <button id="add" onclick="create()">Create new phone</button>
+</div>
+<p id="display"></p>
+​
+</body>
+<script>
+    // Lớp điện thoại: có 4 thuộc tính tên, giá, màu sắc, nhà sản xuất.
+    class Phone {
+        constructor(name, price, color, producer) {
+            this._name = name;
+            this._price = price;
+            this._color = color;
+            this._producer = producer;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+
+
+        getPrice() {
+            return this._price;
+        }
+
+        setPrice(value) {
+            this._price = value;
+        }
+
+        getColor() {
+            return this._color;
+        }
+
+        setColor(value) {
+            this._color = value;
+        }
+
+        getProducer() {
+            return this._producer;
+        }
+
+        setProducer(value) {
+            this._producer = value;
+        }
+    }
+
+    let blackShark = new Phone("Black Shark", 800, "black", "Xiaomi");
+    let iphone13ProMax = new Phone("Iphone 13", 1500, "black", "Apple");
+    let array = [blackShark, iphone13ProMax];
+
+    function display(array) {
+        let sout = "<table border=\"1px\">\n" +
+            "    <tr>\n" +
+            "        <th>Name</th>\n" +
+            "        <th>Price</th>\n" +
+            "        <th>Color</th>\n" +
+            "        <th>Producer</th>\n" +
+            "        <th>Action</th>\n" +
+            "    </tr>";
+        for (let i = 0; i < array.length; i++) {
+            sout += "<tr>" +
+                "<td>" + array[i].getName() + "</td>" +
+                "<td>" + array[i].getPrice() + "</td>" +
+                "<td>" + array[i].getColor() + "</td>" +
+                "<td>" + array[i].getProducer() + "</td>" +
+                "<td>" +
+                "<button id='update' onclick='edit( " + i + ")'>Update</button>" +
+                "<button id='delete' onclick='remove( " + i + ")'>Delete</button>" +
+                "</td>" +
+                "</tr>"
+        }
+        sout += "</table>";
+        document.getElementById("display").innerHTML = sout;
+    }
+
+    display(array);
+
+    function create() {
+        let name = prompt("nhập tên");
+        let price = +prompt("nhập giá");
+        let color = prompt("nhập màu sắc");
+        let producer = prompt("nhập nhà sản xuất");
+        let phone = new Phone(name, price, color, producer);
+        array.push(phone);
+        alert("Thêm mới thành công");
+        display(array)
+    }
+
+    function edit(value) {
+        let name = prompt("nhập tên");
+        let price = +prompt("nhập giá");
+        let color = prompt("nhập màu sắc");
+        let producer = prompt("nhập nhà sản xuất");
+        array[value] = new Phone(name, price, color, producer);
+        alert("Update thành công");
+        display(array)
+    }
+
+    function remove(value) {
+        let choose = confirm("Are you sure ???");
+        if (choose) {
+            array.splice(value, 1);
+            alert("Delete successfully");
+        }
+        display(array);
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

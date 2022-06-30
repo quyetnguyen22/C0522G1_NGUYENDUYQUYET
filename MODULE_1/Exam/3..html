@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex3</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let number = parseInt(prompt("Input the number of elements in array."));
+    let n = parseInt(prompt("Input a number."));
+    for (let i = 0; i < number; i++) {
+        let input = parseInt(prompt("Input the elements of array."));
+        arr.push(input);
+    }
+    document.write("You entered: " + n + "<br>");
+    document.write("The array" + "[" + arr + "]" + "<br>");
+    arr.sort(function (a, b) {
+        return a - b;
+
+    })
+    let newArr = [];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i + 1]) {
+            continue;
+        } else if ((arr[i] % n === 0)) {
+            newArr.push(arr[i]);
+            count++;
+        }
+    }
+    document.write(newArr + "<br>");
+    document.write(count);
+</script>
+</body>
+</html>

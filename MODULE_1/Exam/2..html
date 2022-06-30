@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex2</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let number = parseInt(prompt("Input the number of elements in array."));
+    for (let i = 0; i < number; i++) {
+        let input = parseInt(prompt("Input the elements of array."));
+        arr.push(input);
+    }
+    document.write("[" + arr + "]" + "<br>");
+    let max = arr[0];
+    let min = arr[0];
+    let indexMax = 0;
+    let indexMin = 0;
+    for (let j = 1; j < arr.length; j++) {
+        if (max < arr[j]) {
+            max = arr[j]
+            indexMax = j;
+        }
+        if (min > arr[j]) {
+            min = arr[j];
+            indexMin = j;
+        }
+    }
+    document.write("Min element of array: " + min + "<br>");
+    document.write("First position: " + indexMin + "<br>");
+    document.write("Max element of array: " + max + "<br>");
+    document.write("First position: " + indexMax + "<br>");
+</script>
+</body>
+</html>

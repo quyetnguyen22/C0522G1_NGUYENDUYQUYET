@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+<script>
+    let text = "  nguyen    duy quyet";
+    // let text = "Nguyen";
+    capitalizeFirstLetter(text)
+    function capitalizeFirstLetter(myText) {
+        let word = myText.split(" ");
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === '') {
+                continue;
+            }
+            if (word.length === 1) {
+                document.write("Can't not :" + "<br>");
+                break;
+            }
+            else {
+                word[i] = word[i][0].toUpperCase().substr(0,1);
+            }
+        }
+        let myNewText = word.join("");
+        document.write(myNewText + "<br>");
+        console.log(typeof word)
+        return word;
+        // word.map((word) => {
+        //     return word[0].toUpperCase() + word.substring(1);
+        // }).join((" "));
+        //     document.write(join((" ")));
+    }
+
+</script>
+</body>
+</html>

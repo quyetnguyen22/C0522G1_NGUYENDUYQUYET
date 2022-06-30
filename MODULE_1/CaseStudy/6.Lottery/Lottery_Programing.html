@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lottery</title>
+</head>
+<body>
+<script>
+let yourChoice = parseInt(prompt("Would you like to choose or random?" + "\n1.Let the system random." + "\n2.I want to choose."))
+    if (yourChoice === 1) {
+        for (let i = 0; i < 6; i++) {
+            // document.getElementById().innerHTML = parseInt(Math.random(0,99));
+            document.write(parseInt(Math.random()*100) + " ")
+        }
+    }
+    else if (yourChoice === 2) {
+        alert("Please choose the number which you want to buy.");
+    }
+</script>
+</body>
+</html>

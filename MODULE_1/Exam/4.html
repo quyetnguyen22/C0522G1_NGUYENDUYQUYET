@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex4</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 0 auto;
+        }
+        td {
+            counter-reset: serial;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">List of patients</h1>
+<!--<div>-->
+<!--    <button id="add" onclick="create()">Create new phone</button>-->
+<!--</div>-->
+<p id="display"></p>
+</body>
+<script>
+    class Patient {
+        constructor(serial, fullName, age, address, phoneNumber) {
+            this._serial = serial;
+            this._fullName = fullName;
+            this._age = age;
+            this._address = address;
+            this._phoneNumber = phoneNumber;
+        }
+
+        getSerial() {
+            return this._serial;
+        }
+
+        setSerial(value) {
+            this._serial = value;
+        }
+
+        getFullName() {
+            return this._fullName;
+        }
+
+        setFullName(value) {
+            this._fullName = value;
+        }
+
+
+        getAge() {
+            return this._age;
+        }
+
+        setAge(value) {
+            this._age = value;
+        }
+
+        getAddress() {
+            return this._address;
+        }
+
+        setAddress(value) {
+            this._address = value;
+        }
+
+        getPhoneNumber() {
+            return this._phoneNumber;
+        }
+
+        setPhoneNumber(value) {
+            this._phoneNumber = value;
+        }
+    }
+
+    let patient1 = new Patient("", "Nguyễn Lê Hoàng Anh", 20, "Quảng Nam", "0923434564");
+    let patient2 = new Patient("", "Nguyễn Trần Cảnh", 30, "Quảng Nam", "0943246324");
+    let patient3 = new Patient("", "Hoàng Thanh Hùng", 15, "Quảng Nam", "0123451235");
+    let patient4 = new Patient("", "Trần Lệ Quyên", 19, "Quảng Nam", "0923093748");
+    let array = [patient1, patient2, patient3, patient4];
+
+    function display(array) {
+        let sout = "<table border=\"1px\">\n" +
+            "    <tr>\n" +
+            "        <th>Serial</th>\n" +
+            "        <th>Full Name</th>\n" +
+            "        <th>Age</th>\n" +
+            "        <th>Address</th>\n" +
+            "        <th>Phone Number</th>\n" +
+            "    </tr>";
+        for (let i = 0; i < array.length; i++) {
+            sout += "<tr>" +
+                "<td style='text-align: center'>" + array[i].getSerial() + "</td>" +
+                "<td style='text-align: center'>" + array[i].getFullName() + "</td>" +
+                "<td style='text-align: center'>" + array[i].getAge() + "</td>" +
+                "<td style='text-align: center'>" + array[i].getAddress() + "</td>" +
+                "<td style='text-align: center'>" + array[i].getPhoneNumber() + "</td>" +
+                "</tr>"
+        }
+        sout += "</table>";
+        document.getElementById("display").innerHTML = sout;
+    }
+
+    display(array);
+
+</script>
+</html>

@@ -10,68 +10,76 @@
         font-size: 17px;
     }
     p {
-       color: red ;
+        color: white ;
         font-size: 24px;
+        background-color: orange;
     }
 
     span {
-        color: red;
+        color: #ff0000;
+    }
+    #border {
+        border-bottom: 20px solid aqua;
+        border-top: 20px solid aqua;
+        border-left: 20px solid aqua;
+        border-right: 20px solid aqua;
+        width: 22%;
+        margin: 0 auto;
     }
 
 </style>
 <body>
-<form action="SimpleForm.html" method="get">
-    <p style="text-align: center">YOUR HOBBY</p>
-    <table>
-        <tr>
-            <th>
-                <label for="yourname">Full name: </label>
-            </th>
-            <td>
-                <input type="text" name="yourname" id="yourname" placeholder="your name">
-            </td>
-        </tr>
-        <tr>
-            <th>
-                <label for="youremail">Your Email: </label>
-            </th>
-            <td>
-                <input type="text" name="email" id="youremail" placeholder="your email">
-            </td>
-        </tr>
-        <tr>
-            <th>
-                <label>Hobbies:</label>
-            </th>
-            <td>
-                <input type="checkbox" ><span>Sport</span>
-                <input type="checkbox" ><span>Music</span>
-                <input type="checkbox" > <span>Reading book</span>
-            </td>
-        </tr>
-        <tr>
-            <th></th>
-            <td>
-                <input type="checkbox"><span>Searching book</span>
-                <input type="checkbox"> <span>Playing game</span>
-                <in put type="checkbox"> <span>Movie</span>
-            </td>
-        </tr>
-        <tr>
-            <th>
-            </th>
-            <td>
-                <input type="checkbox"> <span>Travel</span>
-            </td>
-        </tr>
-        <tr>
-            <th></th>
-            <td>
-                <input type="Submit" value="Send" style="margin-right: 20px">
-                <input type="Submit" value="Retry">
-            </td>
-        </tr>
-    </table>
-</form>
+    <div id="border">
+        <form action="SimpleForm.html" method="get">
+        <table >
+            <tr>
+                <th colspan="5" style="background-color: orange">YOUR HOBBY</th>
+            </tr>
+            <tr>
+                <th>
+                    <label for="yourname">Full name: </label>
+                </th>
+                <td>
+                    <input type="text" name="yourname" id="yourname" placeholder="your name">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="youremail">Your Email: </label>
+                </th>
+                <td>
+                    <input type="text" name="email" id="youremail" placeholder="your email">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label>Hobbies:</label>
+                </th>
+                <td>
+                    <input type="checkbox" ><span>Sport</span>
+                    <input type="checkbox" ><span>Music</span>
+                    <input type="checkbox" > <span>Reading book</span>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="checkbox"><span>Searching book</span>
+                    <input type="checkbox"> <span>Playing game</span>
+                    <input type="checkbox"> <span>Movie</span>
+                    <input type="checkbox"> <span>Travel</span>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="Submit" value="Send" style="margin-right: 20px">
+                    <input type="Submit" value="Retry">
+                </td>
+            </tr>
+        </table>
+        </form>
+    </div>
+
 </body>
 </html>

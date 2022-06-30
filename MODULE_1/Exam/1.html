@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex1</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt("Enter a number:"));
+    if (input <= 0 || isNaN(input)) {
+        alert("You entered the wrong number." + "\n Please enter the other number.");
+        input = parseInt(prompt("Enter a number:"));
+    }
+    for (let i = 1; i <= input; i++) {
+        if (input % i === 0) {
+            document.write(i + " ");
+        }
+    }
+</script>
+</body>
+</html>
