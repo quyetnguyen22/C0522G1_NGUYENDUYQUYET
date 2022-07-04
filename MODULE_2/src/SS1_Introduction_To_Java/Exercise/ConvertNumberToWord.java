@@ -2,12 +2,12 @@ package Exercise;
 
 import java.util.Scanner;
 
-public class Convert_Number_To_Word {
+public class ConvertNumberToWord {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input a number: ");
         int number = scanner.nextInt();
-        int div = number / 10;
+        int div = number % 10;
         String show;
         switch (div) {
             case 0:
@@ -76,8 +76,8 @@ public class Convert_Number_To_Word {
         if (number >= 0 && number < 10) {
             System.out.println(show);
         }
-        else if (number >= 10 && number <= 100) {
-            
+        else if (number > 10 && number <= 100) {
+            System.out.println(show + "teen");
         }
     }
 }

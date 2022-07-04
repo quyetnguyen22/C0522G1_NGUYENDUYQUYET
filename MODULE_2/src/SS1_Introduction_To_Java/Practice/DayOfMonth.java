@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Day_Of_Month {
+public class DayOfMonth {
     public static void main(String[] args) {
         Scanner inputMonth = new Scanner(System.in);
         System.out.println("Which month do you want to review: ");

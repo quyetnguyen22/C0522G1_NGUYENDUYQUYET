@@ -2,7 +2,7 @@ package Exercise;
 
 import java.util.Scanner;
 
-public class Currency_Exchange {
+public class CurrencyExchange {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input amount of money that you want to exchange: ");

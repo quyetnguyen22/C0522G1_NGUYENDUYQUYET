@@ -1,6 +1,8 @@
+package Practice;
+
 import java.util.Scanner;
 
-public class Area_Of_Rectangle {
+public class AreaOfRectangle {
     public static void main(String[] args) {
         float length;
         float width;

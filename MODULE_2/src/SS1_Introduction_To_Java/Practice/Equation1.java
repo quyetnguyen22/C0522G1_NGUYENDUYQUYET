@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Equation_1 {
+public class Equation1 {
     public static void main(String[] args) {
         float a;
         float b;
