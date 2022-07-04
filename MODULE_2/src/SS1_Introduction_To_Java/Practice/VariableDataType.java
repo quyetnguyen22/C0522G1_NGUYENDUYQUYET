@@ -1,3 +1,5 @@
+package SS1_Introduction_to_java.Practice;
+
 import java.sql.SQLOutput;
 
 public class VariableDataType {

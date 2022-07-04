@@ -1,4 +1,4 @@
-package Practice;
+package SS1_Introduction_to_java.Practice;
 
 import java.util.Scanner;
 
@@ -22,5 +22,19 @@ public class IBMIndex {
             System.out.printf("%-20.2f%s", bmi, "Overweight");
         else
             System.out.printf("%-20.2f%s", bmi, "Obese");
+    }
+
+    public static class AreaOfRectangle {
+        public static void main(String[] args) {
+            float length;
+            float width;
+            Scanner input = new Scanner(System.in);
+            System.out.println("Enter the length: ");
+            width = input.nextFloat();
+            System.out.println("Enter the width: ");
+            length = input.nextFloat();
+            float area = length * width;
+            System.out.println("Area of the rectangle is: " + area);
+        }
     }
 }
