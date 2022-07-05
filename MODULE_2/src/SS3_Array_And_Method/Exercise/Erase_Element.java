@@ -11,14 +11,12 @@ public class Erase_Element {
         int aNumberOf = scanner.nextInt();
         int[] arr = new int[aNumberOf];
         for (int i = 0; i < aNumberOf; i++) {
-            Scanner scanner1 = new Scanner(System.in);
             System.out.println("Enter the element " + i);
-            arr[i] = scanner1.nextInt();
+            arr[i] = scanner.nextInt();
         }
         System.out.println("The array\n" + Arrays.toString(arr));
-        Scanner scanner2 = new Scanner(System.in);
         System.out.println("Input the element that you want to erase.");
-        int number = scanner2.nextInt();
+        int number = scanner.nextInt();
         boolean isNotExist = true;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == number) {

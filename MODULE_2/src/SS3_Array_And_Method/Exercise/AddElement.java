@@ -10,17 +10,14 @@ public class AddElement {
         int aNumberOf = scanner.nextInt();
         int[] arr = new int[aNumberOf];
         for (int i = 0; i < aNumberOf; i++) {
-            Scanner scanner1 = new Scanner(System.in);
             System.out.println("Enter the element " + i);
-            arr[i] = scanner1.nextInt();
+            arr[i] = scanner.nextInt();
         }
         System.out.println("The array\n" + Arrays.toString(arr));
-        Scanner scanner2 = new Scanner(System.in);
         System.out.println("Input the number that you want to add.");
-        int number = scanner2.nextInt();
-        Scanner scanner3 = new Scanner(System.in);
+        int number = scanner.nextInt();
         System.out.println("Input the position that you want to add.");
-        int index = scanner3.nextInt();
+        int index = scanner.nextInt();
         int[] newArr = new int[aNumberOf];
         if (index < 0 || index > arr.length) {
             System.out.println("Invalid!");
