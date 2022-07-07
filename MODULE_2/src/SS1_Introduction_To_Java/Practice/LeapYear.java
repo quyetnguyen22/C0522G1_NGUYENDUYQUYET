@@ -9,7 +9,6 @@ public class LeapYear {
         System.out.println("Enter a year: ");
         year = scanner.nextInt();
         boolean isLeapYear = false;
-
         boolean isDivisibleBy4 = year % 4 == 0;
         if(isDivisibleBy4){
             boolean isDivisibleBy100 = year % 100 == 0;
