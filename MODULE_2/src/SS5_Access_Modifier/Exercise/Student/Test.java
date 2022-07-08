@@ -1,4 +1,4 @@
-package SS5_Access_Modifier.Exercise.Student;
+package ss5_access_modifier.exercise.student;
 
 public class Test {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package SS4_Class_Object.Practice;
+package ss4_class_object.practice;
 
 public class TestSimpleCircle {
     /**

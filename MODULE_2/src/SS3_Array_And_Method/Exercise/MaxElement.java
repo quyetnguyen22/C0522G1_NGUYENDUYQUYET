@@ -1,6 +1,5 @@
-package SS3_Array_And_Method.Exercise;
+package ss3_array_and_method.Exercise;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MaxElement {

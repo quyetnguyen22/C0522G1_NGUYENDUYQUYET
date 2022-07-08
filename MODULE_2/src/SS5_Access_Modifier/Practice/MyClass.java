@@ -1,4 +1,4 @@
-package SS5_Access_Modifier.Practice;
+package ss5_access_modifier.practice;
 
 public class MyClass {
         static public int X = 2;

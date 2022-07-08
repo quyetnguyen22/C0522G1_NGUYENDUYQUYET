@@ -1,4 +1,4 @@
-package SS5_Access_Modifier.Exercise.Access_Modifier;
+package ss5_access_modifier.exercise.access_modifier;
 
 public class TestCircle {
     public static void main(String[] args) {
