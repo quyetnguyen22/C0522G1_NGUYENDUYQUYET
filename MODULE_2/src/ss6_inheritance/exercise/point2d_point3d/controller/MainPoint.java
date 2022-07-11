@@ -1,7 +1,7 @@
 package ss6_inheritance.exercise.point2d_point3d.controller;
 
-import ss6_inheritance.exercise.point2d_point3d.class_point.Point2D;
-import ss6_inheritance.exercise.point2d_point3d.class_point.Point3D;
+import ss6_inheritance.exercise.point2d_point3d.model.Point2D;
+import ss6_inheritance.exercise.point2d_point3d.model.Point3D;
 
 public class MainPoint {
     public static void main(String[] args) {
