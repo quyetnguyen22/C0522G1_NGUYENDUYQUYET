@@ -39,26 +39,27 @@ public class StudentService implements IStudent {
     public void removeStudent() {
         System.out.println("Nhập thành viên(ID) bạn muốn xóa:");
         int idRemove = Integer.parseInt(scanner.nextLine());
-        boolean isEmpty = studentList.size() == 0;
-        if (isEmpty) {
-            System.out.println("Không tìm thấy ID");
-        } else {
-            for (Student student : studentList) {
-                if (student.getId() == idRemove) {
-                    System.out.print("Bạn có chắc muốn xóa ID: " + idRemove + " này không?\n" +
-                            "1. Có\n" +
-                            "2. Không\n");
-                    int confirm = Integer.parseInt(scanner.nextLine());
-                    if (confirm == 1) {
-                        studentList.remove(student);
-                        System.out.printf("Xóa thành công ID: %d\n", idRemove);
-                    }
-                    break;
+
+        boolean isEmpty = false;
+        for (Student student : studentList) {
+            if (student.getId() == idRemove) {
+                System.out.print("Bạn có chắc muốn xóa ID: " + idRemove + " này không?\n" +
+                        "1. Có\n" +
+                        "2. Không\n");
+                int confirm = Integer.parseInt(scanner.nextLine());
+                if (confirm == 1) {
+                    studentList.remove(student);
+                    System.out.printf("Xóa thành công ID: %d\n", idRemove);
                 }
+                isEmpty = true;
+                break;
             }
         }
-
+        if (!isEmpty) {
+            System.out.println("Không tìm thấy ID");
+        }
     }
+
 
     @Override
     public void displayStudentList() {
@@ -66,4 +67,5 @@ public class StudentService implements IStudent {
             System.out.println(student);
         }
     }
+
 }

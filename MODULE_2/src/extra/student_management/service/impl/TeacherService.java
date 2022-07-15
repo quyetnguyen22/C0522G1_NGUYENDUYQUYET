@@ -36,27 +36,27 @@ public class TeacherService implements ITeacher {
     @Override
     public void removeTeacher() {
         System.out.println("Nhập thành viên(ID) bạn muốn xóa:");
-        int iDRemove = Integer.parseInt(scanner.nextLine());
-        boolean isEmpty = teacherList.size() == 0;
-        if (isEmpty) {
-            System.out.println("Không tìm thấy ID");
-        } else {
+        int idRemove = Integer.parseInt(scanner.nextLine());
+        boolean isEmpty = false;
             for (Teacher teacher : teacherList) {
-                if (teacher.getId() == iDRemove) {
-                    System.out.print("Bạn có chắc muốn xóa ID: " + iDRemove + " này không?\n" +
+                if (teacher.getId() == idRemove) {
+                    System.out.print("Bạn có chắc muốn xóa ID: " + idRemove + " này không?\n" +
                             "1. Có\n" +
                             "2. Không\n");
                     int confirm = Integer.parseInt(scanner.nextLine());
                     if (confirm == 1) {
                         teacherList.remove(teacher);
-                        System.out.printf("Xóa thành công ID: %d\n", iDRemove);
+                        System.out.printf("Xóa thành công ID: %d\n", idRemove);
                     }
+                    isEmpty = true;
                     break;
                 }
             }
-
+        if (!isEmpty) {
+            System.out.println("Không tìm thấy ID");
         }
     }
+
 
     @Override
     public void displayTeacherList() {
