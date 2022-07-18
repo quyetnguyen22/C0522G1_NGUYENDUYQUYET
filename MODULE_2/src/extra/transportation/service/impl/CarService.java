@@ -1,5 +1,6 @@
 package extra.transportation.service.impl;
 
+import extra.transportation.model.Brand;
 import extra.transportation.model.Car;
 import extra.transportation.model.Truck;
 import extra.transportation.service.ICar;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 
 public class CarService implements ICar {
     private static List<Car> carList = new ArrayList<>();
+    private static List<Brand> brandList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
     public Car doCar() {
@@ -39,7 +41,7 @@ public class CarService implements ICar {
     @Override
     public void showCar() {
         if (carList.isEmpty()) {
-            System.out.println("Has not the information!");
+            System.out.println("There are not the information!");
         } else {
             for (Car show : carList) {
                 System.out.println(show);

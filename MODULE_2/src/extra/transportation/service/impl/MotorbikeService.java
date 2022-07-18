@@ -37,7 +37,7 @@ public class MotorbikeService implements IMotorbike {
     @Override
     public void showMotorbike() {
         if (motorbikeList.isEmpty()) {
-            System.out.println("Has not the information!");
+            System.out.println("There are not the information!");
         } else {
             for (Motorbike show : motorbikeList) {
                 System.out.println(show);

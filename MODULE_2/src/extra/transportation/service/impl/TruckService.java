@@ -36,7 +36,7 @@ public class TruckService implements ITruck {
 
     public void showTruck() {
         if (truckList.isEmpty()) {
-            System.out.println("Has not the information!");
+            System.out.println("There are not the information!");
         } else {
             for (Truck truck : truckList) {
                 System.out.println(truck);

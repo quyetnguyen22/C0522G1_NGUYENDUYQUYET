@@ -35,7 +35,7 @@ public class MotorbikeController {
                 default:
                     System.out.println("Input is incorrect!\n" +
                             "Please retry!");
-                    return;
+                    break;
             }
         } while (true);
     }
