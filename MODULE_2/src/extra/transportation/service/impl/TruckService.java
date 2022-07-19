@@ -2,13 +2,14 @@ package extra.transportation.service.impl;
 
 import extra.transportation.model.Transportation;
 import extra.transportation.model.Truck;
+import extra.transportation.service.ITransportation;
 import extra.transportation.service.ITruck;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class TruckService implements ITruck {
+public class TruckService implements ITransportation {
     private static List<Truck> truckList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -28,13 +29,13 @@ public class TruckService implements ITruck {
     }
 
     @Override
-    public void addTruck() {
+    public void add() {
         Truck truck = doTruck();
         truckList.add(truck);
         System.out.println("Add successfully!");
     }
 
-    public void showTruck() {
+    public void show() {
         if (truckList.isEmpty()) {
             System.out.println("There are not the information!");
         } else {
@@ -44,7 +45,7 @@ public class TruckService implements ITruck {
         }
     }
 
-    public void removeTruck() {
+    public void remove() {
         System.out.print("Input ID of transportation that you want to remove:\n");
         int idRemove = Integer.parseInt(scanner.nextLine());
         boolean isFlag = false;
@@ -69,7 +70,7 @@ public class TruckService implements ITruck {
         }
     }
 
-    public void lookUpTruck() {
+    public void lookUp() {
         System.out.print("Input the ID that you want to look up:");
         int display = Integer.parseInt(scanner.nextLine());
         boolean isFlag = false;

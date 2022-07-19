@@ -1,6 +1,5 @@
 package ss11_stack_queue.exercise.count_word;
 
-import java.nio.channels.ScatteringByteChannel;
 import java.util.*;
 
 public class count {
@@ -10,7 +9,7 @@ public class count {
 //        Able was I ere I was Elba i
         System.out.println("Input the string:");
         String str = scanner.nextLine();
-        str = str.toLowerCase();
+//        str = str.toLowerCase();
         String[] arr = str.split(" ");
         System.out.println(Arrays.toString(arr));
         return arr;
@@ -23,10 +22,10 @@ public class count {
             if (!map.containsKey(arr)) {
                 map.put(arr, 1);
             } else {
-                int count = map.get(arr); // gia tri tai key arr
+                int count = map.get(arr); // gia tri cua key arr
                 map.replace(arr, count + 1);
             }
-            }
+        }
         System.out.println(map);
     }
 

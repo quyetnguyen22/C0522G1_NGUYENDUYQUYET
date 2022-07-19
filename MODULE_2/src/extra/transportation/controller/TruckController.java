@@ -1,12 +1,13 @@
 package extra.transportation.controller;
 
+import extra.transportation.service.ITransportation;
 import extra.transportation.service.ITruck;
 import extra.transportation.service.impl.TruckService;
 
 import java.util.Scanner;
 
 public class TruckController {
-    ITruck iTruck = new TruckService();
+    ITransportation iTruck = new TruckService();
 
     public void truckMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -20,16 +21,16 @@ public class TruckController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    iTruck.addTruck();
+                    iTruck.add();
                     break;
                 case 2:
-                    iTruck.showTruck();
+                    iTruck.show();
                     break;
                 case 3:
-                    iTruck.removeTruck();
+                    iTruck.remove();
                     break;
                 case 4:
-                    iTruck.lookUpTruck();
+                    iTruck.lookUp();
                     break;
                 case 5:
                     return;

@@ -115,6 +115,10 @@ public class ProductService implements IProductService {
     @Override
     public void sort() {
         do {
+            if (productList.isEmpty()) {
+                System.out.println("There are NOT the information!");
+                break;
+            }
             System.out.println("1. Decrease by price.\n" +
                     "2. Increase by price.\n" +
                     "3. Return.");

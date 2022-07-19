@@ -4,12 +4,13 @@ import extra.transportation.model.Brand;
 import extra.transportation.model.Car;
 import extra.transportation.model.Truck;
 import extra.transportation.service.ICar;
+import extra.transportation.service.ITransportation;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CarService implements ICar {
+public class CarService implements ITransportation {
     private static List<Car> carList = new ArrayList<>();
     private static List<Brand> brandList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
@@ -32,14 +33,14 @@ public class CarService implements ICar {
     }
 
     @Override
-    public void addCar() {
+    public void add() {
         Car car = doCar();
         carList.add(car);
         System.out.println("Add successfully!");
     }
 
     @Override
-    public void showCar() {
+    public void show() {
         if (carList.isEmpty()) {
             System.out.println("There are not the information!");
         } else {
@@ -50,7 +51,7 @@ public class CarService implements ICar {
     }
 
     @Override
-    public void removeCar() {
+    public void remove() {
         System.out.print("Input ID of transportation that you want to remove:\n");
         int idRemove = Integer.parseInt(scanner.nextLine());
         boolean isFlag = false;
@@ -76,7 +77,7 @@ public class CarService implements ICar {
     }
 
     @Override
-    public void lookUpCar() {
+    public void lookUp() {
         System.out.print("Input the ID that you want to look up:");
         int display = Integer.parseInt(scanner.nextLine());
         boolean isFlag = false;

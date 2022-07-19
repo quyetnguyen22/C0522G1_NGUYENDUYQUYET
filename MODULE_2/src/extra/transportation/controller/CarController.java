@@ -1,13 +1,14 @@
 package extra.transportation.controller;
 
 import extra.transportation.service.ICar;
+import extra.transportation.service.ITransportation;
 import extra.transportation.service.impl.CarService;
 
 import java.util.Scanner;
 
 public class CarController {
     public void carMenu() {
-        ICar iCar = new CarService();
+        ITransportation iCar = new CarService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("System of CAR management:\n" +
@@ -19,16 +20,16 @@ public class CarController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    iCar.addCar();
+                    iCar.add();
                     break;
                 case 2:
-                    iCar.showCar();
+                    iCar.show();
                     break;
                 case 3:
-                    iCar.removeCar();
+                    iCar.remove();
                     break;
                 case 4:
-                    iCar.lookUpCar();
+                    iCar.lookUp();
                     break;
                 case 5:
                     return;

@@ -1,13 +1,14 @@
 package extra.transportation.controller;
 
 import extra.transportation.service.IMotorbike;
+import extra.transportation.service.ITransportation;
 import extra.transportation.service.impl.MotorbikeService;
 
 import java.util.Scanner;
 
 public class MotorbikeController {
     public void motorMenu() {
-        IMotorbike iMotorbike = new MotorbikeService();
+        ITransportation iMotorbike = new MotorbikeService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("System of MOTORBIKE management:\n" +
@@ -19,16 +20,16 @@ public class MotorbikeController {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    iMotorbike.addMotorbike();
+                    iMotorbike.add();
                     break;
                 case 2:
-                    iMotorbike.showMotorbike();
+                    iMotorbike.show();
                     break;
                 case 3:
-                    iMotorbike.removeMotorbike();
+                    iMotorbike.remove();
                     break;
                 case 4:
-                    iMotorbike.lookUpMotorbike();
+                    iMotorbike.lookUp();
                     break;
                 case 5:
                     return;

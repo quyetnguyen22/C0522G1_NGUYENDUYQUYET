@@ -2,12 +2,13 @@ package extra.transportation.service.impl;
 
 import extra.transportation.model.Motorbike;
 import extra.transportation.service.IMotorbike;
+import extra.transportation.service.ITransportation;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MotorbikeService implements IMotorbike {
+public class MotorbikeService implements ITransportation {
     private List<Motorbike> motorbikeList = new ArrayList<>();
     public Scanner scanner = new Scanner(System.in);
 
@@ -27,7 +28,7 @@ public class MotorbikeService implements IMotorbike {
     }
 
     @Override
-    public void addMotorbike() {
+    public void add() {
         Motorbike motorbike = doMotorbike();
         motorbikeList.add(motorbike);
         System.out.println("Add successfully!");
@@ -35,7 +36,7 @@ public class MotorbikeService implements IMotorbike {
     }
 
     @Override
-    public void showMotorbike() {
+    public void show() {
         if (motorbikeList.isEmpty()) {
             System.out.println("There are not the information!");
         } else {
@@ -46,7 +47,7 @@ public class MotorbikeService implements IMotorbike {
     }
 
     @Override
-    public void removeMotorbike() {
+    public void remove() {
         System.out.print("Input ID of transportation that you want to remove:\n");
         int idRemove = Integer.parseInt(scanner.nextLine());
         boolean isFlag = false;
@@ -72,7 +73,7 @@ public class MotorbikeService implements IMotorbike {
     }
 
     @Override
-    public void lookUpMotorbike() {
+    public void lookUp() {
         System.out.print("Input the ID that you want to look up:");
         int display = Integer.parseInt(scanner.nextLine());
         boolean isFlag = false;
