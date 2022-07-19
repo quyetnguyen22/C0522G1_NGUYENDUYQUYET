@@ -6,8 +6,8 @@ import extra.student_management.service.impl.StudentService;
 import java.util.Scanner;
 
 public class StudentController {
-    private final IpersonService iStudent = new StudentService();
-    private final Scanner scanner = new Scanner(System.in);
+    private final IpersonService I_STUDENT = new StudentService();
+    private final Scanner SCANNER = new Scanner(System.in);
     public void studentMenu() {
         do {
             System.out.println("""
@@ -17,19 +17,19 @@ public class StudentController {
                     3. Xem danh sách thành viên.
                     4. Sắp xếp.
                     5. Quay lại.""");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = Integer.parseInt(SCANNER.nextLine());
             switch (choice) {
                 case 1:
-                    iStudent.addMember();
+                    I_STUDENT.addMember();
                     break;
                 case 2:
-                    iStudent.remove();
+                    I_STUDENT.remove();
                     break;
                 case 3:
-                    iStudent.display();
+                    I_STUDENT.display();
                     break;
                 case 4:
-                    iStudent.lookUp();
+                    I_STUDENT.lookUp();
                     break;
                 case 5:
                     return;
