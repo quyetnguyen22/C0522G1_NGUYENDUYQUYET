@@ -5,4 +5,5 @@ public interface IpersonService {
     void remove();
     void display();
     void lookUp();
+    void sort();
 }

@@ -115,5 +115,10 @@ public class TeacherService implements IpersonService {
             }
         }while (true);
     }
+
+    @Override
+    public void sort() {
+
     }
+}
 
