@@ -33,7 +33,7 @@ public class StudentController {
                     I_STUDENT.lookUp();
                     break;
                 case 5:
-//                    I_STUDENT.sort();
+                    I_STUDENT.sort();
                     break;
                 case 6:
                     return;

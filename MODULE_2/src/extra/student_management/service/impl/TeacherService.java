@@ -4,6 +4,7 @@ import extra.student_management.model.Teacher;
 import extra.student_management.service.IpersonService;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -118,7 +119,28 @@ public class TeacherService implements IpersonService {
 
     @Override
     public void sort() {
+        boolean isSwap = true;
+        for (int i = 0; i < teacherList.size() && isSwap ; i++) {
+            isSwap = false;
+            for (int j = 0; j < teacherList.size() - 1 - i; j++) {
 
+                if(teacherList.get(j).getName().compareTo(teacherList.get(j+1).getName()) > 0) {
+                    Collections.swap(teacherList,j,j+1);
+                    isSwap = true;
+                }
+
+                if (teacherList.get(j).getName().compareTo(teacherList.get(j+1).getName()) == 0) {
+                    if (teacherList.get(j).getId() > teacherList.get(j+1).getId()) {
+                        Collections.swap(teacherList,j,j+1);
+                    }
+                }
+            }
+        }
+
+        System.out.println("Danh sách học sinh sau khi sắp xếp: ");
+        for (Teacher teacher : teacherList) {
+            System.out.println(teacher);
+        }
     }
 }
 

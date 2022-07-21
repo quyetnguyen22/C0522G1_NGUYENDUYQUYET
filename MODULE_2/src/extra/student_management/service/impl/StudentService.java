@@ -3,9 +3,7 @@ package extra.student_management.service.impl;
 import extra.student_management.model.Student;
 import extra.student_management.service.IpersonService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentService implements IpersonService {
     private static final List<Student> studentList = new ArrayList<>();
@@ -121,7 +119,29 @@ public class StudentService implements IpersonService {
 
     @Override
     public void sort() {
+        boolean isSwap = true;
+        for (int i = 0; i < studentList.size() && isSwap ; i++) {
+            isSwap = false;
+            for (int j = 0; j < studentList.size() - 1 - i; j++) {
 
+                if(studentList.get(j).getName().compareTo(studentList.get(j+1).getName())) {
+                    Collections.swap(studentList,Collections.reverseOrder(studentList));
+                    isSwap = true;
+                }
+
+                if (studentList.get(j).getName().compareTo(studentList.get(j+1).getName()) == 0) {
+                    if (studentList.get(j).getId() > studentList.get(j+1).getId()) {
+                        Collections.swap(studentList,j,j+1);
+                    }
+                }
+            }
+        }
+
+        System.out.println("Danh sách học sinh sau khi sắp xếp: ");
+        for (Student student : studentList) {
+            System.out.println(student);
+        }
     }
+
 
 }
