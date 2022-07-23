@@ -124,12 +124,12 @@ public class StudentService implements IpersonService {
             isSwap = false;
             for (int j = 0; j < studentList.size() - 1 - i; j++) {
 
-                if(studentList.get(j).getName().compareTo(studentList.get(j+1).getName())) {
-                    Collections.swap(studentList,Collections.reverseOrder(studentList));
+                if(studentList.get(j).getName().compareTo(studentList.get(j+1).getName()) > 0) {
+                    Collections.swap(studentList,j,j+1);
                     isSwap = true;
                 }
 
-                if (studentList.get(j).getName().compareTo(studentList.get(j+1).getName()) == 0) {
+                else if (studentList.get(j).getName().compareTo(studentList.get(j+1).getName()) == 0) {
                     if (studentList.get(j).getId() > studentList.get(j+1).getId()) {
                         Collections.swap(studentList,j,j+1);
                     }

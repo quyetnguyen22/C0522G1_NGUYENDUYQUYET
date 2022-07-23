@@ -9,7 +9,7 @@ public class Circle {
     Circle(double radius) {
         this.radius = radius;
     }
-    protected double getRadius() {
+    public double getRadius() {
         return radius;
     }
 
