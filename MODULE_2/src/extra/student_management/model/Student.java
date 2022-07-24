@@ -8,7 +8,7 @@ public class Student extends Person implements Comparable<Student> {
 
     }
 
-    public Student(int id, String name, String gender, int dateOfBirth, String grade, double score) {
+    public Student(int id, String name, String gender, String dateOfBirth, String grade, double score) {
         super(id, name, dateOfBirth, gender);
         this.grade =grade;
         this.score = score;

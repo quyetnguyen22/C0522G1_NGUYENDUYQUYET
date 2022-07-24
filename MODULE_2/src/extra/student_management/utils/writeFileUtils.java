@@ -24,7 +24,7 @@ public class WriteFileUtils {
         }
     }
     public static void writeStudentFile(List<Student> studentList) {
-        final String PATH = "src/extra/student_management/utils/StudentFile.csv";
+        final String PATH = "src/extra/student_management/data/StudentFile.csv";
         String header = "ID, Ten, Gioi Tinh, Ngay Sinh, Lop, Diem";
         StringBuilder data = new StringBuilder(header + "\n");
         for (Student student: studentList) {
@@ -33,7 +33,7 @@ public class WriteFileUtils {
         writeFile(PATH, data.toString());
     }
     public static void writeTeacherFile(List<Teacher> teacherList) {
-        final String PATH = "src/extra/student_management/utils/TeacherFile.csv";
+        final String PATH = "src/extra/student_management/data/TeacherFile.csv";
         String header = "ID, Ten, Gioi Tinh, Ngay Sinh, Chuyen Mon";
         StringBuilder data = new StringBuilder(header + "\n");
         for (Teacher teacher: teacherList) {

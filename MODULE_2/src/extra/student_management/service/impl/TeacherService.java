@@ -1,5 +1,6 @@
 package extra.student_management.service.impl;
 
+import extra.student_management.exception.DuplicateIDException;
 import extra.student_management.model.Teacher;
 import extra.student_management.service.IpersonService;
 import extra.student_management.sort.ComparatorTeacher;
@@ -12,14 +13,14 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TeacherService implements IpersonService {
-    private static final String PATH = "src/extra/student_management/utils/TeacherFile.csv";
+    private static final String PATH = "src/extra/student_management/data/TeacherFile.csv";
     private static final List<Teacher> TEACHER_LIST = new ArrayList<>();
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static Teacher inforTeacher() {
         int id;
-        int dateOfBirth;
+        String dateOfBirth;
         String gender;
         String name;
         String specialist;
@@ -50,17 +51,8 @@ public class TeacherService implements IpersonService {
         }while (true);
         System.out.println("Nhập tên: ");
         name = SCANNER.nextLine();
-        do {
-            try {
-                System.out.println("Nhập ngày sinh: ");
-                dateOfBirth = Integer.parseInt(SCANNER.nextLine());
-                break;
-            }catch (NumberFormatException e) {
-                System.err.println("""
-                        Bạn đã nhập sai!
-                        Hãy nhập lại 1 số lớn hơn 0!""");
-            }
-        }while (true);
+        System.out.println("Nhập ngày sinh: ");
+        dateOfBirth = SCANNER.nextLine();
         System.out.println("Nhập giới tính: ");
         gender = SCANNER.nextLine();
         System.out.println("Nhập chuyên môn: ");

@@ -42,7 +42,7 @@ public class ReadFileUtils {
         String[] info;
         for (String studentList : newList) {
             info = studentList.split(",");
-            students.add(new Student(Integer.parseInt(info[0]), info[1], info[2], Integer.parseInt(info[3]), info[4], Double.parseDouble(info[5])));
+            students.add(new Student(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4], Double.parseDouble(info[5])));
         }
         return students;
     }
@@ -59,7 +59,7 @@ public class ReadFileUtils {
         String[] info;
         for (String teacherList : newList) {
             info = teacherList.split(",");
-            teachers.add(new Teacher(Integer.parseInt(info[0]), info[1], info[2], Integer.parseInt(info[3]), info[4]));
+            teachers.add(new Teacher(Integer.parseInt(info[0]), info[1], info[2], info[3], info[4]));
         }
         return teachers;
     }

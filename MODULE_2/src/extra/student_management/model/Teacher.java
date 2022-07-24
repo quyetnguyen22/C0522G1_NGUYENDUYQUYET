@@ -5,7 +5,7 @@ public class Teacher extends Person implements Comparable<Teacher> {
     public Teacher() {
 
     }
-    public Teacher(int id, String name, String gender, int dateOfBirth, String specialist) {
+    public Teacher(int id, String name, String gender, String dateOfBirth, String specialist) {
         super(id, name, dateOfBirth, gender);
         this.specialist = specialist;
     }

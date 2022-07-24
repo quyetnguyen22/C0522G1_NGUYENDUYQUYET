@@ -2,12 +2,12 @@ package extra.student_management.model;
 public class Person {
     private int id;
     private String name;
-    private int dateOfBirth;
+    private String dateOfBirth;
     private String gender;
 
     public Person() {
     }
-    public Person(int id, String name, int dateOfBirth, String gender) {
+    public Person(int id, String name, String dateOfBirth, String gender) {
         this.id = id;
         this.name =name;
         this.dateOfBirth =dateOfBirth;
@@ -19,7 +19,7 @@ public class Person {
     public String getName() {
         return this.name;
     }
-    public int getDateOfBirth() {
+    public String getDateOfBirth() {
         return this.dateOfBirth;
     }
     public String getGender() {
@@ -31,7 +31,7 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
     public void setGender(String gender) {
