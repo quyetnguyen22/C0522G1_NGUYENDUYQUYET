@@ -34,7 +34,7 @@ public class WriteFileUtils {
     }
     public static void writeTeacherFile(List<Teacher> teacherList) {
         final String PATH = "src/extra/student_management/utils/TeacherFile.csv";
-        String header = "ID, Ten, Gioi Tinh, Ngay Sinh, Chuyen Mon\n";
+        String header = "ID, Ten, Gioi Tinh, Ngay Sinh, Chuyen Mon";
         StringBuilder data = new StringBuilder(header + "\n");
         for (Teacher teacher: teacherList) {
             data.append(teacher.getInforTeacher()).append("\n");

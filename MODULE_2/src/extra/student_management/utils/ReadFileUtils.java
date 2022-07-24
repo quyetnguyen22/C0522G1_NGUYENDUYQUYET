@@ -1,6 +1,5 @@
 package extra.student_management.utils;
 
-import com.sun.source.tree.WhileLoopTree;
 import extra.student_management.model.Student;
 import extra.student_management.model.Teacher;
 
@@ -16,38 +15,52 @@ public class ReadFileUtils {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
+            int i = 0;
             while ((line = bufferedReader.readLine()) != null) {
-                list.add(line);
+                if (i > 0) {
+                    list.add(line);
+                }
+                i++;
             }
             bufferedReader.close();
         } catch (FileNotFoundException e) {
             System.err.println("File is not found!");
         }
+//        System.out.println(list);
         return list;
     }
 
-    public static List<Student> readStudentFile(String path) throws IOException {
-        List<String> newList = readFile(path);
+    public static List<Student> readStudentFile(String path) {
+        List<String> newList = null;
+        try {
+            newList = readFile(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         List<Student> students = new ArrayList<>();
 
         String[] info;
         for (String studentList : newList) {
             info = studentList.split(",");
-            students.add(new Student(Integer.parseInt(info[0]), info[1], info[2], Integer.parseInt(info[3]), info[4], Integer.parseInt(info[5])));
+            students.add(new Student(Integer.parseInt(info[0]), info[1], info[2], Integer.parseInt(info[3]), info[4], Double.parseDouble(info[5])));
         }
-        System.out.println(students);
         return students;
     }
-    public static List<Teacher> readTeacherFile(String path) throws IOException {
-        List<String> newList = readFile(path);
+
+    public static List<Teacher> readTeacherFile(String path) {
+        List<String> newList = null;
+        try {
+            newList = readFile(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         List<Teacher> teachers = new ArrayList<>();
 
         String[] info;
-        for (String studentList : newList) {
-            info = studentList.split(",");
+        for (String teacherList : newList) {
+            info = teacherList.split(",");
             teachers.add(new Teacher(Integer.parseInt(info[0]), info[1], info[2], Integer.parseInt(info[3]), info[4]));
         }
-        System.out.println(teachers);
         return teachers;
     }
 }

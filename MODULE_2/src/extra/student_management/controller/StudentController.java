@@ -2,14 +2,13 @@ package extra.student_management.controller;
 
 import extra.student_management.service.IpersonService;
 import extra.student_management.service.impl.StudentService;
-import extra.student_management.utils.WriteFileUtils;
 
 import java.util.Scanner;
 
 public class StudentController {
     private final IpersonService I_STUDENT = new StudentService();
     private final Scanner SCANNER = new Scanner(System.in);
-    public void studentMenu() {
+    public void studentMenu(){
         do {
             System.out.println("""
                     Chọn thao tác bạn muốn thực hiện: 

@@ -1,8 +1,6 @@
 package extra.student_management.model;
 
-import java.util.Comparator;
-
-public class Teacher extends Person implements Comparator<Teacher> {
+public class Teacher extends Person implements Comparable<Teacher> {
     private String specialist;
     public Teacher() {
 
@@ -30,16 +28,13 @@ public class Teacher extends Person implements Comparator<Teacher> {
                 '}' +
                 super.toString();
     }
-    public int compare(Teacher o1, Teacher o2) {
-        int compareName = CharSequence.compare(o1.getName(), o2.getName());
-        if (compareName != 0) {
-            return compareName;
-        } else {
-            int compareId = Integer.compare(o1.getId(), o2.getId());
-            if (compareId != 0) {
-                return compareId;
-            }
-            return 0;
+    @Override
+    public int compareTo(Teacher o) {
+        String[] name = new String[0];
+        for (int i = 0; i < getName().length(); i++) {
+            name = getName().split(" ");
         }
+        return name[name.length - 1].compareTo(o.getName());
     }
+
 }

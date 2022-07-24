@@ -1,9 +1,10 @@
 package extra.student_management.controller;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ManagementController {
-    public static void managementControl() {
+    public static void managementControl() throws IOException {
         StudentController studentController = new StudentController();
         TeacherController teacherController = new TeacherController();
         Scanner scanner = new Scanner(System.in);

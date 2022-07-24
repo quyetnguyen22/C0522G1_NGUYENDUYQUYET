@@ -3,20 +3,22 @@ package extra.student_management.controller;
 import extra.student_management.service.IpersonService;
 import extra.student_management.service.impl.TeacherService;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TeacherController {
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final IpersonService I_TEACHER = new TeacherService();
-    public void teacherMenu() {
+    public void teacherMenu() throws IOException {
         do {
             System.out.println("""
                     Chọn thao tác bạn muốn thực hiện:
                     1. Thêm thành viên.
                     2. Xóa thành viên.
                     3. Xem danh sách thành viên.
-                    4. Tìm kiếm
-                    5. Quay lại.""");
+                    4. Tìm kiếm.
+                    5. Sắp xếp.
+                    6. Quay lại.""");
             int choice = Integer.parseInt(SCANNER.nextLine());
             switch (choice) {
                 case 1:
@@ -32,6 +34,9 @@ public class TeacherController {
                     I_TEACHER.lookUp();
                     break;
                 case 5:
+                    I_TEACHER.sort();
+                    break;
+                case 6:
                     return;
             }
         } while (true);

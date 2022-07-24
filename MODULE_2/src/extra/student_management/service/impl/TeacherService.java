@@ -1,8 +1,9 @@
 package extra.student_management.service.impl;
 
-import extra.student_management.model.Student;
 import extra.student_management.model.Teacher;
 import extra.student_management.service.IpersonService;
+import extra.student_management.sort.ComparatorTeacher;
+import extra.student_management.utils.ReadFileUtils;
 import extra.student_management.utils.WriteFileUtils;
 
 import java.util.ArrayList;
@@ -11,7 +12,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TeacherService implements IpersonService {
+    private static final String PATH = "src/extra/student_management/utils/TeacherFile.csv";
     private static final List<Teacher> TEACHER_LIST = new ArrayList<>();
+
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static Teacher inforTeacher() {
@@ -22,8 +25,9 @@ public class TeacherService implements IpersonService {
         String specialist;
         do {
             try {
-                System.out.print("Nhập ID: ");
+                System.out.println("Nhập ID: ");
                 id = Integer.parseInt(SCANNER.nextLine());
+                List<Teacher> TEACHER_LIST = ReadFileUtils.readTeacherFile(PATH);
                 boolean isExist = false;
                 for (Teacher teacher : TEACHER_LIST) {
                     if (teacher.getId() == id) {
@@ -40,28 +44,26 @@ public class TeacherService implements IpersonService {
                 }
             }catch (NumberFormatException e) {
                 System.err.println("""
-                        
                         Bạn đã nhập sai!
                         Hãy nhập lại 1 số lớn hơn 0!""");
             }
         }while (true);
-        System.out.print("Nhập tên: ");
+        System.out.println("Nhập tên: ");
         name = SCANNER.nextLine();
         do {
             try {
-                System.out.print("Nhập ngày sinh: ");
+                System.out.println("Nhập ngày sinh: ");
                 dateOfBirth = Integer.parseInt(SCANNER.nextLine());
                 break;
             }catch (NumberFormatException e) {
                 System.err.println("""
-                        
                         Bạn đã nhập sai!
                         Hãy nhập lại 1 số lớn hơn 0!""");
             }
         }while (true);
-        System.out.print("Nhập giới tính: ");
+        System.out.println("Nhập giới tính: ");
         gender = SCANNER.nextLine();
-        System.out.print("Nhập chuyên môn: ");
+        System.out.println("Nhập chuyên môn: ");
         specialist = SCANNER.nextLine();
         Teacher teacher = new Teacher(id, name, gender, dateOfBirth, specialist);
         return teacher;
@@ -69,6 +71,7 @@ public class TeacherService implements IpersonService {
 
     @Override
     public void addMember() {
+        List<Teacher> TEACHER_LIST = ReadFileUtils.readTeacherFile(PATH);
         Teacher teacher = inforTeacher();
         TEACHER_LIST.add(teacher);
         WriteFileUtils.writeTeacherFile(TEACHER_LIST);
@@ -77,6 +80,7 @@ public class TeacherService implements IpersonService {
 
     @Override
     public void remove() {
+        List<Teacher> TEACHER_LIST = ReadFileUtils.readTeacherFile(PATH);
         System.out.println("Nhập thành viên(ID) bạn muốn xóa:");
         int idRemove = Integer.parseInt(SCANNER.nextLine());
         boolean isEmpty = false;
@@ -88,6 +92,7 @@ public class TeacherService implements IpersonService {
                 int confirm = Integer.parseInt(SCANNER.nextLine());
                 if (confirm == 1) {
                     TEACHER_LIST.remove(teacher);
+                    WriteFileUtils.writeTeacherFile(TEACHER_LIST);
                     System.out.printf("Xóa thành công ID: %d\n", idRemove);
                 }
                 isEmpty = true;
@@ -102,6 +107,7 @@ public class TeacherService implements IpersonService {
 
     @Override
     public void display() {
+        List<Teacher> TEACHER_LIST = ReadFileUtils.readTeacherFile(PATH);
         if (TEACHER_LIST.isEmpty()) {
             System.out.println("Danh sách trống!");
             return;
@@ -114,6 +120,7 @@ public class TeacherService implements IpersonService {
 
     @Override
     public void lookUp() {
+        List<Teacher> TEACHER_LIST = ReadFileUtils.readTeacherFile(PATH);
         do {
             System.out.println("""
                     Tìm kiếm.
@@ -160,27 +167,31 @@ public class TeacherService implements IpersonService {
 
     @Override
     public void sort() {
-        boolean isSwap = true;
-        for (int i = 0; i < TEACHER_LIST.size() && isSwap ; i++) {
-            isSwap = false;
-            for (int j = 0; j < TEACHER_LIST.size() - 1 - i; j++) {
+        List<Teacher> TEACHER_LIST = ReadFileUtils.readTeacherFile(PATH);
+        if (TEACHER_LIST.isEmpty()) {
+            System.out.println("Danh sách trống!");
+        } else {
+            do {
+                System.out.println("""
+                        Sắp xếp.
+                        1. Theo tên.
+                        2. Theo ID.
+                        3. Quay lại.""");
+                int choice = Integer.parseInt(SCANNER.nextLine());
 
-                if(TEACHER_LIST.get(j).getName().compareTo(TEACHER_LIST.get(j+1).getName()) > 0) {
-                    Collections.swap(TEACHER_LIST,j,j+1);
-                    isSwap = true;
+                if (choice == 1) {
+                    Collections.sort(TEACHER_LIST);
+                    System.out.println(TEACHER_LIST);
+                } else if (choice == 2) {
+                    TEACHER_LIST.sort(Collections.reverseOrder(new ComparatorTeacher()));
+                    System.out.println(TEACHER_LIST);
+                } else if (choice == 3) {
+                    return;
+                } else {
+                    System.out.println("Nhập sai!\n" +
+                            "Vui lòng nhập lại!");
                 }
-
-                else if (TEACHER_LIST.get(j).getName().compareTo(TEACHER_LIST.get(j+1).getName()) == 0) {
-                    if (TEACHER_LIST.get(j).getId() > TEACHER_LIST.get(j+1).getId()) {
-                        Collections.swap(TEACHER_LIST,j,j+1);
-                    }
-                }
-            }
-        }
-
-        System.out.println("Danh sách học sinh sau khi sắp xếp: ");
-        for (Teacher teacher : TEACHER_LIST) {
-            System.out.println(teacher);
+            } while (true);
         }
     }
 }

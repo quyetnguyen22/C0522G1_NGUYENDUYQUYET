@@ -39,12 +39,16 @@ public class Student extends Person implements Comparable<Student> {
                 "grade='" + grade + '\'' +
                 ", score=" + score +
                 '}'+
-                super.toString() + "\n";
+                super.toString();
     }
 
 
     @Override
     public int compareTo(Student o) {
-        return this.getName().compareTo(o.getName());
+        String[] name = new String[0];
+        for (int i = 0; i < getName().length(); i++) {
+            name = getName().split(" ");
+        }
+        return name[name.length - 1].compareTo(o.getName());
     }
 }

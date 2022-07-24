@@ -3,12 +3,17 @@ package extra.student_management.service.impl;
 import extra.student_management.model.Student;
 import extra.student_management.service.IpersonService;
 import extra.student_management.sort.ComparatorStudent;
+import extra.student_management.utils.ReadFileUtils;
 import extra.student_management.utils.WriteFileUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 public class StudentService implements IpersonService {
     private static final List<Student> STUDENT_LIST = new ArrayList<>();
+    private  static final String PATH = "src/extra/student_management/utils/StudentFile.csv";
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -18,11 +23,12 @@ public class StudentService implements IpersonService {
         String gender;
         int dateOfBirth;
         String grade;
-        int score;
+        double score;
         do {
             try {
                 System.out.println("Nhập ID: ");
                 id = Integer.parseInt(scanner.nextLine());
+                List<Student> STUDENT_LIST = ReadFileUtils.readStudentFile(PATH);
                 boolean isExist = false;
                 for (Student student : STUDENT_LIST) {
                     if (student.getId() == id) {
@@ -44,27 +50,26 @@ public class StudentService implements IpersonService {
                         Hãy nhập lại 1 số lớn hơn 0!""");
             }
         } while (true);
-        System.out.print("Nhập tên: ");
+        System.out.println("Nhập tên: ");
         name = scanner.nextLine();
         do {
             try {
-                System.out.print("Nhập ngày sinh: ");
+                System.out.println("Nhập ngày sinh: ");
                 dateOfBirth = Integer.parseInt(scanner.nextLine());
                 break;
             } catch (NumberFormatException e) {
                 System.err.println("""
-                                                
                         Bạn đã nhập sai!
                         Hãy nhập lại 1 số lớn hơn 0!""");
             }
         } while (true);
-        System.out.print("Nhập giới tính: ");
+        System.out.println("Nhập giới tính: ");
         gender = scanner.nextLine();
-        System.out.print("Nhập lớp: ");
+        System.out.println("Nhập lớp: ");
         grade = scanner.nextLine();
         do {
             try {
-                System.out.print("Nhập điểm: ");
+                System.out.println("Nhập điểm: ");
                 score = Integer.parseInt(scanner.nextLine());
                 break;
             } catch (NumberFormatException e) {
@@ -80,6 +85,7 @@ public class StudentService implements IpersonService {
 
     @Override
     public void addMember() {
+        List<Student> STUDENT_LIST = ReadFileUtils.readStudentFile(PATH);
         Student student = inforStudent();
         STUDENT_LIST.add(student);
         WriteFileUtils.writeStudentFile(STUDENT_LIST);
@@ -88,6 +94,7 @@ public class StudentService implements IpersonService {
 
     @Override
     public void remove() {
+        List<Student> STUDENT_LIST = ReadFileUtils.readStudentFile(PATH);
         System.out.println("Nhập thành viên(ID) bạn muốn xóa:");
         int idRemove = Integer.parseInt(scanner.nextLine());
 
@@ -100,6 +107,7 @@ public class StudentService implements IpersonService {
                 int confirm = Integer.parseInt(scanner.nextLine());
                 if (confirm == 1) {
                     STUDENT_LIST.remove(student);
+                    WriteFileUtils.writeStudentFile(STUDENT_LIST);
                     System.out.printf("Xóa thành công ID: %d\n", idRemove);
                 }
                 isEmpty = true;
@@ -111,9 +119,9 @@ public class StudentService implements IpersonService {
         }
     }
 
-
     @Override
     public void display() {
+        List<Student> STUDENT_LIST = ReadFileUtils.readStudentFile(PATH);
         if (STUDENT_LIST.isEmpty()) {
             System.out.println("Danh sách trống!");
             return;
@@ -125,6 +133,7 @@ public class StudentService implements IpersonService {
 
     @Override
     public void lookUp() {
+        List<Student> STUDENT_LIST = ReadFileUtils.readStudentFile(PATH);
         do {
             System.out.println("""
                     Tìm kiếm.
@@ -170,6 +179,7 @@ public class StudentService implements IpersonService {
 
     @Override
     public void sort() {
+        List<Student> STUDENT_LIST = ReadFileUtils.readStudentFile(PATH);
         if (STUDENT_LIST.isEmpty()) {
             System.out.println("Danh sách trống!");
         } else {
@@ -185,7 +195,7 @@ public class StudentService implements IpersonService {
                     Collections.sort(STUDENT_LIST);
                     System.out.println(STUDENT_LIST);
                 } else if (choice == 2) {
-                    Collections.sort(STUDENT_LIST, Student::compareTo);
+                    STUDENT_LIST.sort(Collections.reverseOrder(new ComparatorStudent()));
                     System.out.println(STUDENT_LIST);
                 } else if (choice == 3) {
                     return;
